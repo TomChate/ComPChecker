@@ -17,8 +17,8 @@ public class UserAccount {
     private String email;
     private char type;          //Type of User 'A' for Admin, 'G' for general.
     
-     public static void getUser() {
-  
+     public String getUsername() {
+         return username;
     }
     
 }

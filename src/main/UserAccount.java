@@ -12,10 +12,10 @@ package main;
 public class UserAccount {
     private String username;
     private String password;
-    private String Fname;
-    private String Sname;
+    private String fName;
+    private String sName;
     private String email;
-    private char type;          //Type of User 'A' for Admin, 'G' for general.
+    private boolean  type;          //True for admin, false for general. 
     
      public String getUsername() {
          return username;

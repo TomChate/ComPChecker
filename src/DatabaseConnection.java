@@ -1,4 +1,4 @@
-import java.sql.DriverManager;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,6 +10,7 @@ import java.sql.DriverManager;
  *
  * @author Tom
  */
+import java.sql.DriverManager;
 import java.net.*;
 import java.io.*;
 import java.sql.*;
@@ -22,16 +23,15 @@ public class DatabaseConnection {
 
         try {
  
-            String host = "jdbc:mysql://213.104.129.95:3306/ComPChecker";
-            String uName = "root";
+            String host = "jdbc:mysql://213.104.129.95:3306/ComPChecker";   //Location of mySQL server
+            String uName = "root";          
             String uPass = "root";
-            System.out.println("Testing.");
-            Connection con = DriverManager.getConnection(host, "root", "root");
+            Connection con = DriverManager.getConnection(host, uName, uPass);
             System.out.println("Connected database successfully...");
 
             return con;
         } catch (SQLException err) {
-            System.out.println(err.getMessage());
+            System.out.println(err.getMessage());   //Prints out SQL error 
             return null;
         }
     }

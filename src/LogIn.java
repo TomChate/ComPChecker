@@ -1,9 +1,11 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Tom
@@ -33,6 +35,7 @@ public class LogIn extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         buttonLogOn = new javax.swing.JButton();
+        labelCreateAccount = new javax.swing.JLabel();
 
         jTextPane2.setText("Username:");
         jScrollPane2.setViewportView(jTextPane2);
@@ -54,6 +57,16 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
+        labelCreateAccount.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        labelCreateAccount.setForeground(new java.awt.Color(0, 0, 255));
+        labelCreateAccount.setText("Create Account");
+        labelCreateAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        labelCreateAccount.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelCreateAccountMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,6 +82,10 @@ public class LogIn extends javax.swing.JFrame {
                     .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtboxpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(112, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelCreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +100,9 @@ public class LogIn extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(28, 28, 28)
                 .addComponent(buttonLogOn)
-                .addGap(94, 94, 94))
+                .addGap(65, 65, 65)
+                .addComponent(labelCreateAccount)
+                .addContainerGap())
         );
 
         pack();
@@ -91,22 +110,25 @@ public class LogIn extends javax.swing.JFrame {
 
     private void buttonLogOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogOnActionPerformed
         // TODO add your handling code here:
-        String username =txtboxusername.getText();
+        String username = txtboxusername.getText();
         String password = txtboxpassword.getText();
-        
-        
-        
+
         UserAccount user = new UserAccount();
-        
-        boolean suc = user.LogInService(username,password);
-        if(suc){
-        System.out.println("Okay.");
-        }else{
-        System.out.println("no.");
-        
+
+        boolean successful = user.LogInService(username, password);
+        if (successful) {
+            boolean type = user.getType();
+            System.out.println(type);
+        } else {
+            JOptionPane.showMessageDialog(null, "User account can not be found. Please try again or create a new account", "No Account Found", JOptionPane.INFORMATION_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_buttonLogOnActionPerformed
+
+    private void labelCreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccountMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "MAKE A FORM TO MAKE NEW ACCOUNT HERE");
+    }//GEN-LAST:event_labelCreateAccountMouseClicked
 
     /**
      * @param args the command line arguments
@@ -149,6 +171,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JLabel labelCreateAccount;
     private javax.swing.JTextField txtboxpassword;
     private javax.swing.JTextField txtboxusername;
     // End of variables declaration//GEN-END:variables

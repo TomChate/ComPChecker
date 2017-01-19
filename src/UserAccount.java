@@ -1,3 +1,9 @@
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,9 +24,50 @@ public class UserAccount {
     private boolean  type;          //True for admin, false for general. 
     
      public String getUsername() {
+    
          return username;
     }
+     
+     public boolean LogInService(String enteredUname, String enteredPass){
+     
+     Connection con = DatabaseConnection.establishConnection();
+     String dbUname, dbPassword;
+     
+     try{
+     Statement stmt = (Statement) con.createStatement();
+     String query = "SELECT ID , Password, accountType FROM Account";
+     
+     stmt.executeQuery(query);
+     ResultSet rs = stmt.getResultSet();
+     
+     while(rs.next()){
+     dbUname = rs.getString("ID");
+     dbPassword = rs.getString("Password");
+     
+     if(dbUname.equals(enteredUname) && dbPassword.equals(enteredPass))
+     {
+     return true;
+     
+     }else{
+     return false;
+     }
+     
+     
+     
+     }
+     
+     
+     
+     }catch (SQLException err) {
+             System.out.println(err.getMessage());   //Prints out SQL error 
+        }
+     
+     return false;
+     
+     
+     
+     
+     }
     
 }
-
 

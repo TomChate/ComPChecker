@@ -35,5 +35,16 @@ public class DatabaseConnection {
             return null;
         }
     }
+    
+    public void closeConnection(Connection con){
+    
+        try{
+        con.close();
+        }catch(SQLException err){
+        
+        
+        }
+    
+    }
 
 }

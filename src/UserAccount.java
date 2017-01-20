@@ -68,5 +68,13 @@ public class UserAccount {
     public boolean getType() {
         return type;
     }
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        LogIn frm = new LogIn();
+        frm.setVisible(true);
+ 
+        
+    }
 
 }

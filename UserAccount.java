@@ -1,5 +1,6 @@
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -61,7 +62,7 @@ public class UserAccount {
 
     }
 
-    public void setIUsername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -81,7 +82,7 @@ public class UserAccount {
         this.email = email;
     }
 
-    private void setType(boolean type) {
+    public void setType(boolean type) {
         this.type = type;
     }
 
@@ -122,5 +123,27 @@ public class UserAccount {
         }
         return false;
     }    
+    
+    public void saveUser(){
+    
+    Connection con = DatabaseConnection.establishConnection();
+    
+    try {
+       String query = "INSERT INTO Account values (?,?,?,?,?,?)"; 
+          
+       PreparedStatement statement = con.prepareStatement(query);
+    
+       statement.setString(1,this.getUsername());
+       statement.setBoolean(6, this.getType());
+       statement.execute();
+    }
+    catch(SQLException err){
+        
+    
+    }
+    
+    }
+    
+    
 }
 

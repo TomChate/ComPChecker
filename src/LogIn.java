@@ -36,6 +36,7 @@ public class LogIn extends javax.swing.JFrame {
         buttonLogOn = new javax.swing.JButton();
         labelCreateAccount = new javax.swing.JLabel();
         txtboxpassword = new javax.swing.JTextField();
+        labelCreateAccount1 = new javax.swing.JLabel();
 
         jTextPane2.setText("Username:");
         jScrollPane2.setViewportView(jTextPane2);
@@ -65,42 +66,64 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        txtboxpassword.setText("jTextField1");
+        txtboxpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtboxpasswordActionPerformed(evt);
+            }
+        });
+
+        labelCreateAccount1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        labelCreateAccount1.setForeground(new java.awt.Color(0, 0, 255));
+        labelCreateAccount1.setText("Forgot Password?");
+        labelCreateAccount1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        labelCreateAccount1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelCreateAccount1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelCreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelCreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonLogOn)
+                            .addComponent(txtboxpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(txtboxusername))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonLogOn)
-                    .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtboxpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGap(141, 141, 141)
+                .addComponent(labelCreateAccount1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtboxpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(28, 28, 28)
                 .addComponent(buttonLogOn)
-                .addGap(65, 65, 65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelCreateAccount1)
+                .addGap(42, 42, 42)
                 .addComponent(labelCreateAccount)
                 .addContainerGap())
         );
@@ -112,8 +135,6 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = txtboxusername.getText();
         String password = txtboxpassword.getText();
-         System.out.println(password);
-        
         
         
         UserAccount user = new UserAccount();
@@ -136,6 +157,14 @@ public class LogIn extends javax.swing.JFrame {
            
         
     }//GEN-LAST:event_labelCreateAccountMouseClicked
+
+    private void txtboxpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtboxpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtboxpasswordActionPerformed
+
+    private void labelCreateAccount1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccount1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelCreateAccount1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -179,6 +208,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JLabel labelCreateAccount;
+    private javax.swing.JLabel labelCreateAccount1;
     private javax.swing.JTextField txtboxpassword;
     private javax.swing.JTextField txtboxusername;
     // End of variables declaration//GEN-END:variables

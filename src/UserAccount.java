@@ -1,5 +1,6 @@
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -61,40 +62,88 @@ public class UserAccount {
 
     }
 
-    public void setIUsername(String username){
-    this.username = username;
+    public void setUsername(String username) {
+        this.username = username;
     }
-    
-    public void setPassword(String password){
-    this.password = password;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    
-    public void setFname(String fname){
-    this.fName = fname;
+
+    public void setFname(String fname) {
+        this.fName = fname;
     }
-    
-    public void setSname(String sname){
-    this.sName = sname;
+
+    public void setSname(String sname) {
+        this.sName = sname;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    private void setType(boolean type) {
+    public void setType(boolean type) {
         this.type = type;
     }
 
     public boolean getType() {
         return type;
     }
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
         LogIn frm = new LogIn();
         frm.setVisible(true);
- 
-        
+
     }
 
+    public boolean usernameAvailability(String username) {
+        Connection con = DatabaseConnection.establishConnection();
+
+        try {
+            int availability;
+            Statement stmt = (Statement) con.createStatement();
+            String query = ("SELECT COUNT(*) FROM Account WHERE ID = '" + username + "'");
+
+            stmt.executeQuery(query);
+            ResultSet rs = stmt.getResultSet();
+            while (rs.next()) {
+               availability = rs.getInt("COUNT(*)");
+               if(availability == 1){
+                   return false;
+               }else{
+                return true;
+               }
+            }
+            
+        } catch (SQLException err) {
+
+            System.out.println(err.getMessage());
+            return false;
+        }
+        return false;
+    }    
+    
+    public void saveUser(){
+    
+    Connection con = DatabaseConnection.establishConnection();
+    
+    try {
+       String query = "INSERT INTO Account values (?,?,?,?,?,?)"; 
+          
+       PreparedStatement statement = con.prepareStatement(query);
+    
+       statement.setString(1,this.getUsername());
+       statement.setBoolean(6, this.getType());
+       statement.execute();
+    }
+    catch(SQLException err){
+        
+    
+    }
+    
+    }
+    
+    
 }
+

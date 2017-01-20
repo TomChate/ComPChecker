@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Tom/Documents/GitHub/ComPChecker/src/Main.java</file>
             <file>file:/C:/Users/Tom/Documents/GitHub/ComPChecker/src/DatabaseConnection.java</file>
             <file>file:/C:/Users/Tom/Documents/GitHub/ComPChecker/src/UserAccount.java</file>
+            <file>file:/C:/Users/Tom/Documents/GitHub/ComPChecker/src/LogIn.java</file>
+            <file>file:/C:/Users/Tom/Documents/GitHub/ComPChecker/src/CreateAccount.java</file>
         </group>
     </open-files>
 </project-private>

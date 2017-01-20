@@ -133,8 +133,12 @@ public class UserAccount {
           
        PreparedStatement statement = con.prepareStatement(query);
     
-       statement.setString(1,this.getUsername());
-       statement.setBoolean(6, this.getType());
+       statement.setString(1,username);
+       statement.setString(2, password);
+       statement.setString(3, fName);
+       statement.setString(4, sName);
+       statement.setString(5,email);
+       statement.setBoolean(6, type);
        statement.execute();
     }
     catch(SQLException err){

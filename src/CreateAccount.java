@@ -154,8 +154,17 @@ public class CreateAccount extends javax.swing.JFrame {
        String surname = txtboxSurname.getText();
        String email = txtboxEmail.getText();
        
-       
-               // TODO add your handling code here:
+       UserAccount user = new UserAccount();
+       boolean result = user.usernameAvailability(username);
+       if(result){
+       user.setUsername(username);
+       user.setPassword(password);
+       user.setFname(name);
+       user.setSname(surname);
+       user.setEmail(email);
+       user.setType(false);
+       }
+              // TODO add your handling code here:
     }//GEN-LAST:event_buttonSubmitActionPerformed
 
     /**

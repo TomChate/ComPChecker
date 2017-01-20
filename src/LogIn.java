@@ -127,7 +127,11 @@ public class LogIn extends javax.swing.JFrame {
 
     private void labelCreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccountMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "MAKE A FORM TO MAKE NEW ACCOUNT HERE");
+           CreateAccount frm = new CreateAccount();
+           this.setVisible(false);
+           frm.setVisible(true);
+           
+        
     }//GEN-LAST:event_labelCreateAccountMouseClicked
 
     /**

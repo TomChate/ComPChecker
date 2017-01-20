@@ -8,7 +8,9 @@
 
 /**
  *
- * @author Tom
+ * @author Thomas Chate
+ * @version 1.0
+ * @since 20/01/2017
  */
 import java.sql.DriverManager;
 import java.net.*;

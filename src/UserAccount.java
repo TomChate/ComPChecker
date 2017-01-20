@@ -61,6 +61,28 @@ public class UserAccount {
 
     }
 
+    public void setIUsername(String username){
+    this.username = username;
+    }
+    
+    public void setPassword(String password){
+    this.password = password;
+    }
+    
+    public void setFname(String fname){
+    this.fName = fname;
+    }
+    
+    public void setSname(String sname){
+    this.sName = sname;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+ 
+    
     private void setType(boolean type) {
         this.type = type;
     }

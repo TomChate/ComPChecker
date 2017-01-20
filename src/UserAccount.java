@@ -81,8 +81,6 @@ public class UserAccount {
         this.email = email;
     }
 
- 
-    
     private void setType(boolean type) {
         this.type = type;
     }

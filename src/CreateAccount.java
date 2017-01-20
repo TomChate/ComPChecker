@@ -193,6 +193,7 @@ public class CreateAccount extends javax.swing.JFrame {
                 boolean result = user.usernameAvailability(username);
                 if (result) {
                     user.setUsername(username);
+                    String hexPassword = password;
                     user.setPassword(password);
                     user.setFname(name);
                     user.setSname(surname);

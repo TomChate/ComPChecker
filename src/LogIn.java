@@ -35,7 +35,7 @@ public class LogIn extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         buttonLogOn = new javax.swing.JButton();
         labelCreateAccount = new javax.swing.JLabel();
-        passwordbox = new javax.swing.JPasswordField();
+        txtboxpassword = new javax.swing.JTextField();
 
         jTextPane2.setText("Username:");
         jScrollPane2.setViewportView(jTextPane2);
@@ -65,11 +65,7 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        passwordbox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordboxActionPerformed(evt);
-            }
-        });
+        txtboxpassword.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,10 +81,10 @@ public class LogIn extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonLogOn)
-                    .addComponent(txtboxusername, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                    .addComponent(passwordbox))
+                    .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtboxpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -101,7 +97,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(passwordbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtboxpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(buttonLogOn)
                 .addGap(65, 65, 65)
@@ -115,8 +111,11 @@ public class LogIn extends javax.swing.JFrame {
     private void buttonLogOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogOnActionPerformed
         // TODO add your handling code here:
         String username = txtboxusername.getText();
-        String password = passwordbox.toString();
-
+        String password = txtboxpassword.getText();
+         System.out.println(password);
+        
+        
+        
         UserAccount user = new UserAccount();
 
         boolean successful = user.LogInService(username, password);
@@ -137,10 +136,6 @@ public class LogIn extends javax.swing.JFrame {
            
         
     }//GEN-LAST:event_labelCreateAccountMouseClicked
-
-    private void passwordboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordboxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,7 +179,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JLabel labelCreateAccount;
-    private javax.swing.JPasswordField passwordbox;
+    private javax.swing.JTextField txtboxpassword;
     private javax.swing.JTextField txtboxusername;
     // End of variables declaration//GEN-END:variables
 }

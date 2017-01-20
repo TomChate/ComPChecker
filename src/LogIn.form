@@ -51,10 +51,10 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="buttonLogOn" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtboxusername" pref="134" max="32767" attributes="0"/>
-                  <Component id="passwordbox" max="32767" attributes="0"/>
+                  <Component id="txtboxusername" min="-2" pref="134" max="-2" attributes="0"/>
+                  <Component id="txtboxpassword" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="112" max="32767" attributes="0"/>
           </Group>
@@ -71,7 +71,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="passwordbox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtboxpassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="buttonLogOn" min="-2" max="-2" attributes="0"/>
@@ -123,10 +123,10 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labelCreateAccountMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="passwordbox">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordboxActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="txtboxpassword">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

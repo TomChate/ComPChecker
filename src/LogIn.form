@@ -54,8 +54,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="buttonLogOn" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtboxpassword" alignment="0" pref="134" max="32767" attributes="0"/>
-                          <Component id="txtboxusername" max="32767" attributes="0"/>
+                          <Component id="txtboxusername" pref="134" max="32767" attributes="0"/>
+                          <Component id="passwordfield" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -80,7 +80,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtboxpassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordfield" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="buttonLogOn" min="-2" max="-2" attributes="0"/>
@@ -134,11 +134,6 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labelCreateAccountMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtboxpassword">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtboxpasswordActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="labelCreateAccount1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -154,6 +149,11 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labelCreateAccount1MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="passwordfield">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordfieldActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

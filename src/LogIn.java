@@ -35,8 +35,8 @@ public class LogIn extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         buttonLogOn = new javax.swing.JButton();
         labelCreateAccount = new javax.swing.JLabel();
-        txtboxpassword = new javax.swing.JTextField();
         labelCreateAccount1 = new javax.swing.JLabel();
+        passwordfield = new javax.swing.JPasswordField();
 
         jTextPane2.setText("Username:");
         jScrollPane2.setViewportView(jTextPane2);
@@ -66,12 +66,6 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        txtboxpassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtboxpasswordActionPerformed(evt);
-            }
-        });
-
         labelCreateAccount1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
         labelCreateAccount1.setForeground(new java.awt.Color(0, 0, 255));
         labelCreateAccount1.setText("Forgot Password?");
@@ -79,6 +73,12 @@ public class LogIn extends javax.swing.JFrame {
         labelCreateAccount1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelCreateAccount1MouseClicked(evt);
+            }
+        });
+
+        passwordfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordfieldActionPerformed(evt);
             }
         });
 
@@ -99,8 +99,8 @@ public class LogIn extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(buttonLogOn)
-                            .addComponent(txtboxpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                            .addComponent(txtboxusername))
+                            .addComponent(txtboxusername, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(passwordfield))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -118,7 +118,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtboxpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(buttonLogOn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -134,8 +134,8 @@ public class LogIn extends javax.swing.JFrame {
     private void buttonLogOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogOnActionPerformed
         // TODO add your handling code here:
         String username = txtboxusername.getText();
-        String password = txtboxpassword.getText();
-        
+        String password = String.valueOf(passwordfield.getPassword());
+        System.out.println(password);
         
         UserAccount user = new UserAccount();
 
@@ -158,13 +158,13 @@ public class LogIn extends javax.swing.JFrame {
         
     }//GEN-LAST:event_labelCreateAccountMouseClicked
 
-    private void txtboxpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtboxpasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtboxpasswordActionPerformed
-
     private void labelCreateAccount1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccount1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_labelCreateAccount1MouseClicked
+
+    private void passwordfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordfieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,7 +209,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JLabel labelCreateAccount;
     private javax.swing.JLabel labelCreateAccount1;
-    private javax.swing.JTextField txtboxpassword;
+    private javax.swing.JPasswordField passwordfield;
     private javax.swing.JTextField txtboxusername;
     // End of variables declaration//GEN-END:variables
 }

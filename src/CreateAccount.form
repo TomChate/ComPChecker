@@ -70,15 +70,15 @@
                           </Group>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtboxUsername" pref="178" max="32767" attributes="0"/>
-                          <Component id="txtboxPassword" max="32767" attributes="0"/>
-                          <Component id="txtboxPasswordConfirm" alignment="0" max="32767" attributes="0"/>
+                          <Component id="passwordfield" max="32767" attributes="0"/>
+                          <Component id="passwordconfirmfield" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,12 +93,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtboxPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordfield" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtboxPasswordConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordconfirmfield" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -134,11 +134,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Password:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtboxPassword">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtboxPasswordActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -178,10 +173,9 @@
         <Property name="text" type="java.lang.String" value="Confirm Password:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtboxPasswordConfirm">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtboxPasswordConfirmActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JPasswordField" name="passwordfield">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="passwordconfirmfield">
     </Component>
   </SubComponents>
 </Form>

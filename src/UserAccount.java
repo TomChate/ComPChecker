@@ -27,7 +27,7 @@ public class UserAccount {
 
         return username;
     }
-
+    
     public boolean LogInService(String enteredUname, String enteredPass) {
         //Checks entered username and password against ones stored in database.
         Connection con = DatabaseConnection.establishConnection();
@@ -35,7 +35,7 @@ public class UserAccount {
 
         try {
             Statement stmt = (Statement) con.createStatement();
-            String query = "SELECT ID , Password, accountType FROM Account";
+            String query = ("SELECT ID, Password, accountType FROM Account WHERE ID='" + enteredUname+"'");
 
             stmt.executeQuery(query);
             ResultSet rs = stmt.getResultSet();

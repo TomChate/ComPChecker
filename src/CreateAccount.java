@@ -148,7 +148,14 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtboxNameActionPerformed
 
     private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
-        // TODO add your handling code here:
+       String username = txtboxUsername.getText();
+       String password = txtboxPassword.getText();
+       String name = txtboxName.getText();
+       String surname = txtboxSurname.getText();
+       String email = txtboxEmail.getText();
+       
+       
+               // TODO add your handling code here:
     }//GEN-LAST:event_buttonSubmitActionPerformed
 
     /**

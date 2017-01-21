@@ -23,11 +23,21 @@ public class UserAccount {
     private String email;
     private boolean type;          //True for admin, false for general. 
 
+    /**
+     *
+     * @return
+     */
     public String getUsername() {
 
         return username;
     }
     
+    /**
+     *
+     * @param enteredUname
+     * @param enteredPass
+     * @return
+     */
     public boolean LogInService(String enteredUname, String enteredPass) {
         //Checks entered username and password against ones stored in database.
         Connection con = DatabaseConnection.establishConnection();
@@ -62,34 +72,66 @@ public class UserAccount {
 
     }
 
+    /**
+     *
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     *
+     * @param fname
+     */
     public void setFname(String fname) {
         this.fName = fname;
     }
 
+    /**
+     *
+     * @param sname
+     */
     public void setSname(String sname) {
         this.sName = sname;
     }
 
+    /**
+     *
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     *
+     * @param type
+     */
     public void setType(boolean type) {
         this.type = type;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getType() {
         return type;
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         // TODO code application logic here
         LogIn frm = new LogIn();
@@ -97,6 +139,11 @@ public class UserAccount {
 
     }
 
+    /**
+     *
+     * @param username
+     * @return
+     */
     public boolean usernameAvailability(String username) {
         Connection con = DatabaseConnection.establishConnection();
 
@@ -124,6 +171,9 @@ public class UserAccount {
         return false;
     }    
     
+    /**
+     *
+     */
     public void saveUser(){
     
     Connection con = DatabaseConnection.establishConnection();

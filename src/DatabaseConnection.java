@@ -19,8 +19,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *
+ * @author Tom
+ */
 public class DatabaseConnection {
 
+    /**
+     *
+     * @return
+     */
     public static Connection establishConnection() {    //This method connects to the database and returns the connection.
 
         try {
@@ -38,6 +46,10 @@ public class DatabaseConnection {
         }
     }
     
+    /**
+     *
+     * @param con
+     */
     public void closeConnection(Connection con){
     
         try{

@@ -124,7 +124,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelCreateAccount1)
                 .addGap(42, 42, 42)
-                .addComponent(labelCreateAccount)
+                .addComponent(labelCreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -136,13 +136,14 @@ public class LogIn extends javax.swing.JFrame {
         String username = txtboxusername.getText();
         String password = String.valueOf(passwordfield.getPassword());
         System.out.println(password);
-        
+
         UserAccount user = new UserAccount();
 
         boolean successful = user.LogInService(username, password);
         if (successful) {
-            boolean type = user.getType();
-            System.out.println(type);
+            AddMake frm = new AddMake();
+            this.setVisible(false);
+            frm.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "User account can not be found. Please try again or create a new account", "No Account Found", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -151,11 +152,11 @@ public class LogIn extends javax.swing.JFrame {
 
     private void labelCreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccountMouseClicked
         // TODO add your handling code here:
-           CreateAccount frm = new CreateAccount();
-           this.setVisible(false);
-           frm.setVisible(true);
-           
-        
+        CreateAccount frm = new CreateAccount();
+        this.setVisible(false);
+        frm.setVisible(true);
+
+
     }//GEN-LAST:event_labelCreateAccountMouseClicked
 
     private void labelCreateAccount1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccount1MouseClicked

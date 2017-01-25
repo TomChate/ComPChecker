@@ -51,9 +51,9 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnViewComponents" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnEditComp1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnAddComp1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnDeleteAcc1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCompareBuilds" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnViewBuild" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnEditBuild" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnCreateBuild" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -82,24 +82,24 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDeleteAcc" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnDeleteAcc1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnEditBuild" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAddComp" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnAddComp1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnViewBuild" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnEditComp" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnEditComp1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnCompareBuilds" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDeleteComp" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnViewComponents" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -117,6 +117,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Create Account"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateAccActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDeleteAcc">
       <Properties>
@@ -144,11 +147,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Edit Component"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditCompActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDeleteComp">
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete Component"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteCompActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCreateBuild">
       <Properties>
@@ -158,7 +167,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateBuildActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDeleteAcc1">
+    <Component class="javax.swing.JButton" name="btnEditBuild">
       <Properties>
         <Property name="text" type="java.lang.String" value="Edit Build"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -169,26 +178,32 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteAcc1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditBuildActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAddComp1">
+    <Component class="javax.swing.JButton" name="btnViewBuild">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Build"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddComp1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewBuildActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEditComp1">
+    <Component class="javax.swing.JButton" name="btnCompareBuilds">
       <Properties>
         <Property name="text" type="java.lang.String" value="Compare Builds"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCompareBuildsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnViewComponents">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Components"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewComponentsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLogo">
       <Properties>

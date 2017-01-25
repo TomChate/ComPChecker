@@ -35,9 +35,9 @@ public class AdminMenu extends javax.swing.JFrame {
         btnEditComp = new javax.swing.JButton();
         btnDeleteComp = new javax.swing.JButton();
         btnCreateBuild = new javax.swing.JButton();
-        btnDeleteAcc1 = new javax.swing.JButton();
-        btnAddComp1 = new javax.swing.JButton();
-        btnEditComp1 = new javax.swing.JButton();
+        btnEditBuild = new javax.swing.JButton();
+        btnViewBuild = new javax.swing.JButton();
+        btnCompareBuilds = new javax.swing.JButton();
         btnViewComponents = new javax.swing.JButton();
         lblLogo = new javax.swing.JLabel();
 
@@ -51,6 +51,11 @@ public class AdminMenu extends javax.swing.JFrame {
         lblAdminMenu.setText("Admin Menu");
 
         btnCreateAcc.setText("Create Account");
+        btnCreateAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateAccActionPerformed(evt);
+            }
+        });
 
         btnDeleteAcc.setText("Delete Account");
         btnDeleteAcc.setMaximumSize(new java.awt.Dimension(107, 23));
@@ -69,8 +74,18 @@ public class AdminMenu extends javax.swing.JFrame {
         });
 
         btnEditComp.setText("Edit Component");
+        btnEditComp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditCompActionPerformed(evt);
+            }
+        });
 
         btnDeleteComp.setText("Delete Component");
+        btnDeleteComp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteCompActionPerformed(evt);
+            }
+        });
 
         btnCreateBuild.setText("Create Build");
         btnCreateBuild.addActionListener(new java.awt.event.ActionListener() {
@@ -79,25 +94,35 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
 
-        btnDeleteAcc1.setText("Edit Build");
-        btnDeleteAcc1.setMaximumSize(new java.awt.Dimension(107, 23));
-        btnDeleteAcc1.setMinimumSize(new java.awt.Dimension(107, 23));
-        btnDeleteAcc1.addActionListener(new java.awt.event.ActionListener() {
+        btnEditBuild.setText("Edit Build");
+        btnEditBuild.setMaximumSize(new java.awt.Dimension(107, 23));
+        btnEditBuild.setMinimumSize(new java.awt.Dimension(107, 23));
+        btnEditBuild.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteAcc1ActionPerformed(evt);
+                btnEditBuildActionPerformed(evt);
             }
         });
 
-        btnAddComp1.setText("View Build");
-        btnAddComp1.addActionListener(new java.awt.event.ActionListener() {
+        btnViewBuild.setText("View Build");
+        btnViewBuild.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddComp1ActionPerformed(evt);
+                btnViewBuildActionPerformed(evt);
             }
         });
 
-        btnEditComp1.setText("Compare Builds");
+        btnCompareBuilds.setText("Compare Builds");
+        btnCompareBuilds.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompareBuildsActionPerformed(evt);
+            }
+        });
 
         btnViewComponents.setText("View Components");
+        btnViewComponents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewComponentsActionPerformed(evt);
+            }
+        });
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
 
@@ -121,9 +146,9 @@ public class AdminMenu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnViewComponents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditComp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAddComp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDeleteAcc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCompareBuilds, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewBuild, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditBuild, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnCreateBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(189, 189, 189))
             .addGroup(layout.createSequentialGroup()
@@ -145,44 +170,74 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDeleteAcc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteAcc1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEditBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddComp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddComp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnViewBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditComp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditComp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCompareBuilds, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDeleteComp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewComponents, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        //new DeleteAccount().setVisible(true);
     }//GEN-LAST:event_btnDeleteAccActionPerformed
 
     private void btnAddCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCompActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        //new AddComponent().setVisible(true);
     }//GEN-LAST:event_btnAddCompActionPerformed
 
-    private void btnDeleteAcc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAcc1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteAcc1ActionPerformed
+    private void btnEditBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditBuildActionPerformed
+        this.setVisible(false);
+        //new EditBuild().setVisible(true);
+    }//GEN-LAST:event_btnEditBuildActionPerformed
 
-    private void btnAddComp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddComp1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddComp1ActionPerformed
+    private void btnViewBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBuildActionPerformed
+        this.setVisible(false);
+        //new ViewBuild().setVisible(true);
+    }//GEN-LAST:event_btnViewBuildActionPerformed
 
     private void btnCreateBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBuildActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        //new CreateBuild().setVisible(true);
     }//GEN-LAST:event_btnCreateBuildActionPerformed
+
+    private void btnCreateAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccActionPerformed
+        this.setVisible(false);
+        new CreateAccount().setVisible(true);
+    }//GEN-LAST:event_btnCreateAccActionPerformed
+
+    private void btnEditCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCompActionPerformed
+        this.setVisible(false);
+        //new CreateEditComponent().setVisible(true);
+    }//GEN-LAST:event_btnEditCompActionPerformed
+
+    private void btnDeleteCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCompActionPerformed
+        this.setVisible(false);
+        //new DeleteComponent().setVisible(true);
+    }//GEN-LAST:event_btnDeleteCompActionPerformed
+
+    private void btnCompareBuildsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompareBuildsActionPerformed
+        this.setVisible(false);
+        //new CompareBuilds().setVisible(true);
+    }//GEN-LAST:event_btnCompareBuildsActionPerformed
+
+    private void btnViewComponentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewComponentsActionPerformed
+        this.setVisible(false);
+        //new ViewComponents().setVisible(true);
+    }//GEN-LAST:event_btnViewComponentsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,14 +279,14 @@ public class AdminMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddComp;
-    private javax.swing.JButton btnAddComp1;
+    private javax.swing.JButton btnCompareBuilds;
     private javax.swing.JButton btnCreateAcc;
     private javax.swing.JButton btnCreateBuild;
     private javax.swing.JButton btnDeleteAcc;
-    private javax.swing.JButton btnDeleteAcc1;
     private javax.swing.JButton btnDeleteComp;
+    private javax.swing.JButton btnEditBuild;
     private javax.swing.JButton btnEditComp;
-    private javax.swing.JButton btnEditComp1;
+    private javax.swing.JButton btnViewBuild;
     private javax.swing.JButton btnViewComponents;
     private javax.swing.JLabel lblAdminMenu;
     private javax.swing.JLabel lblLogo;

@@ -169,49 +169,79 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtboxNameActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        String username = txtboxUsername.getText();    
+        String username = txtboxUsername.getText();
         String password = String.valueOf(passwordfield.getPassword());
         String passwordConfirm = String.valueOf(passwordconfirmfield.getPassword());
-        
+
         String name = txtboxName.getText();
         String surname = txtboxSurname.getText();
         String email = txtboxEmail.getText();
-        boolean confirm = false;
-
-        if (password.equals(passwordConfirm)) {
-            confirm = true;
-        } else {
-            JOptionPane.showMessageDialog(null, "Passwords Do Not Match", "Password Issues", JOptionPane.INFORMATION_MESSAGE);
+        
+     
+        
+        
+        
+        
+        boolean confirm = true;
+        
+        if((username.isEmpty()|| password.isEmpty()) || passwordConfirm.isEmpty() || name.isEmpty() || surname.isEmpty() || email.isEmpty()){
+          
+        confirm = false;
         }
+        
+        
+        if (confirm) { //Checks to see all fields are complete.
+            int emailValidation = email.indexOf('@');
+            if (emailValidation >= 0) {
+                int nameLength = name.length();
+                int surnameLength = surname.length();
+                if (surnameLength <= 45) {
+                    if (nameLength <= 45) {
+                        UserAccount user = new UserAccount();
+                        boolean result = user.usernameAvailability(username);
+                        if (result) {
+                            user.setUsername(username);
+                            String hexPassword = password;
+                            user.setPassword(password);
+                            user.setFname(name);
+                            user.setSname(surname);
+                            user.setEmail(email);
+                            user.setType(false);
+                            user.saveUser();
 
-        if (confirm) {
-            if (username != null && password != null && passwordConfirm != null && name != null && surname != null && email != null) {
-                UserAccount user = new UserAccount();
-                boolean result = user.usernameAvailability(username);
-                if (result) {
-                    user.setUsername(username);
-                    String hexPassword = password;
-                    user.setPassword(password);
-                    user.setFname(name);
-                    user.setSname(surname);
-                    user.setEmail(email);
-                    user.setType(false);
-                    user.saveUser();
+                            JOptionPane.showMessageDialog(null, "Account Created. You will be returned to the Log In Page", "Account Created", JOptionPane.INFORMATION_MESSAGE);
+                            LogIn frm = new LogIn();
+                            this.setVisible(false);
+                            frm.setVisible(true);
 
-                    JOptionPane.showMessageDialog(null, "Account Created. You will be returned to the Log In Page", "Account Created", JOptionPane.INFORMATION_MESSAGE);
-                    LogIn frm = new LogIn();
-                    this.setVisible(false);
-                    frm.setVisible(true);
+                        }else{
+                         JOptionPane.showMessageDialog(null, "Account in use, ","", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        }
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Name too long.", "", JOptionPane.INFORMATION_MESSAGE);
+
+                    }
+
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Surname too long.", "", JOptionPane.INFORMATION_MESSAGE);
 
                 }
 
-            } // TODO add your handling code here:
-            else {
-                JOptionPane.showMessageDialog(null, "Please complete all fields!", "Complete All fields", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_btnSubmitActionPerformed
+            } else {
+                JOptionPane.showMessageDialog(null, "Email Issue: Please ensure the email field contains an '@'.", "Email Issue", JOptionPane.INFORMATION_MESSAGE);
 
+            }
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Please complete all fields!", "Complete All fields", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     /**
      * @param args the command line arguments

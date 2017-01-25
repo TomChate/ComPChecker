@@ -186,6 +186,11 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtForenameActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        
+        //We need to add validation for the different entries here
+        //We could also add a pop-iup "Thanks for registering" window?
+        //I saw Pawel did something like that in the mock-up, was all.
+        
         String username = txtUsername.getText();    
         String password = String.valueOf(passwordfield.getPassword());
         String passwordConfirm = String.valueOf(txtConfirmPass.getPassword());

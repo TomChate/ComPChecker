@@ -39,7 +39,7 @@ public class AdminMenu extends javax.swing.JFrame {
         btnAddComp1 = new javax.swing.JButton();
         btnEditComp1 = new javax.swing.JButton();
         btnViewComponents = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -99,7 +99,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
         btnViewComponents.setText("View Components");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,14 +128,14 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addGap(189, 189, 189))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addComponent(lblLogo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblAdminMenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -233,7 +233,7 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnEditComp;
     private javax.swing.JButton btnEditComp1;
     private javax.swing.JButton btnViewComponents;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblAdminMenu;
+    private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,17 +30,25 @@ public class AddMake extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblMake = new javax.swing.JLabel();
         txtboxMake = new javax.swing.JTextField();
         txtboxwebsite = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        lblWebsite = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
+        lblLogo = new javax.swing.JLabel();
+        lblAdminMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Make:");
+        lblMake.setText("Make:");
 
-        jLabel2.setText("Website:");
+        txtboxwebsite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtboxwebsiteActionPerformed(evt);
+            }
+        });
+
+        lblWebsite.setText("Website:");
 
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -49,6 +57,12 @@ public class AddMake extends javax.swing.JFrame {
             }
         });
 
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+
+        lblAdminMenu.setFont(new java.awt.Font("Lato", 0, 24)); // NOI18N
+        lblAdminMenu.setText("Add Make");
+        lblAdminMenu.setToolTipText("Add make/brand/manufacturer");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -56,33 +70,40 @@ public class AddMake extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
+                        .addGap(158, 158, 158)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                            .addComponent(lblWebsite)
+                            .addComponent(lblMake))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtboxMake, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                            .addComponent(txtboxwebsite)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(btnSave)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(btnSave)
+                            .addComponent(txtboxMake)
+                            .addComponent(txtboxwebsite)
+                            .addComponent(lblAdminMenu))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblLogo)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(9, 9, 9)
+                .addComponent(lblLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblAdminMenu)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblMake)
                     .addComponent(txtboxMake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtboxwebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(34, 34, 34)
+                    .addComponent(lblWebsite))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSave)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
@@ -112,6 +133,10 @@ public class AddMake extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtboxwebsiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtboxwebsiteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtboxwebsiteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,8 +175,10 @@ public class AddMake extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblAdminMenu;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblMake;
+    private javax.swing.JLabel lblWebsite;
     private javax.swing.JTextField txtboxMake;
     private javax.swing.JTextField txtboxwebsite;
     // End of variables declaration//GEN-END:variables

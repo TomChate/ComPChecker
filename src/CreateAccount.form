@@ -42,27 +42,6 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-<<<<<<< HEAD
-              <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblSurname" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblForename" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnCancel" max="32767" attributes="0"/>
-                          <Component id="btnCreate" max="32767" attributes="0"/>
-                          <Component id="txtForename" max="32767" attributes="0"/>
-                          <Component id="txtSurname" max="32767" attributes="0"/>
-                          <Component id="txtEmail" min="-2" pref="178" max="-2" attributes="0"/>
-=======
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -75,36 +54,10 @@
                           <Component id="txtboxName" max="32767" attributes="0"/>
                           <Component id="txtboxSurname" max="32767" attributes="0"/>
                           <Component id="txtboxEmail" min="-2" pref="178" max="-2" attributes="0"/>
->>>>>>> origin/master
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-<<<<<<< HEAD
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblPassword" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblConfirmPass" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCreateAccount" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtUsername" max="32767" attributes="0"/>
-                              <Component id="passwordfield" max="32767" attributes="0"/>
-                              <Component id="txtConfirmPass" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-=======
                           <Component id="lblusername" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblPassword" min="-2" max="-2" attributes="0"/>
@@ -128,54 +81,12 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="lblLogo" min="-2" pref="595" max="-2" attributes="0"/>
               <EmptySpace pref="18" max="32767" attributes="0"/>
->>>>>>> origin/master
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblLogo" min="-2" pref="97" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lblCreateAccount" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="passwordfield" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblConfirmPass" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtConfirmPass" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblForename" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtForename" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblSurname" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSurname" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
-=======
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -218,42 +129,29 @@
                       <EmptySpace pref="47" max="32767" attributes="0"/>
                   </Group>
               </Group>
->>>>>>> origin/master
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-<<<<<<< HEAD
-    <Component class="javax.swing.JLabel" name="lblUsername">
-=======
     <Component class="javax.swing.JLabel" name="lblusername">
->>>>>>> origin/master
       <Properties>
         <Property name="text" type="java.lang.String" value="Username:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtUsername">
+    <Component class="javax.swing.JTextField" name="txtboxUsername">
     </Component>
     <Component class="javax.swing.JLabel" name="lblPassword">
       <Properties>
         <Property name="text" type="java.lang.String" value="Password:"/>
       </Properties>
     </Component>
-<<<<<<< HEAD
-    <Component class="javax.swing.JLabel" name="lblForename">
-=======
     <Component class="javax.swing.JLabel" name="lblFname">
->>>>>>> origin/master
       <Properties>
         <Property name="text" type="java.lang.String" value="Forename:"/>
       </Properties>
     </Component>
-<<<<<<< HEAD
-    <Component class="javax.swing.JLabel" name="lblSurname">
-=======
     <Component class="javax.swing.JLabel" name="lblSname">
->>>>>>> origin/master
       <Properties>
         <Property name="text" type="java.lang.String" value="Surname:"/>
       </Properties>
@@ -263,66 +161,32 @@
         <Property name="text" type="java.lang.String" value="Email:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtForename">
+    <Component class="javax.swing.JTextField" name="txtboxName">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtForenameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtboxNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtSurname">
+    <Component class="javax.swing.JTextField" name="txtboxSurname">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtEmail">
+    <Component class="javax.swing.JTextField" name="txtboxEmail">
     </Component>
-<<<<<<< HEAD
-    <Component class="javax.swing.JButton" name="btnCreate">
-=======
     <Component class="javax.swing.JButton" name="btnSubmit">
->>>>>>> origin/master
       <Properties>
         <Property name="text" type="java.lang.String" value="Create Account"/>
         <Property name="actionCommand" type="java.lang.String" value="CreateAccount"/>
       </Properties>
       <Events>
-<<<<<<< HEAD
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblConfirmPass">
-=======
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblConfPassword">
->>>>>>> origin/master
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirm Password:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="passwordfield">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="txtConfirmPass">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblCreateAccount">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lato" size="24" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Create Account"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCancel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblLogo">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/logo.png"/>
-        </Property>
-      </Properties>
+    <Component class="javax.swing.JPasswordField" name="passwordconfirmfield">
     </Component>
     <Component class="javax.swing.JLabel" name="lblLogo">
       <Properties>

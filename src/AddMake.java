@@ -18,7 +18,6 @@ public class AddMake extends javax.swing.JFrame {
      */
     public AddMake() {
         initComponents();
-        setSize(800,400);
     }
 
     /**
@@ -35,22 +34,11 @@ public class AddMake extends javax.swing.JFrame {
         txtboxwebsite = new javax.swing.JTextField();
         lblWebsite = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
-        lblLogo = new javax.swing.JLabel();
-        lblAdminMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblMake.setText("Make:");
 
-<<<<<<< HEAD
-        txtboxwebsite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtboxwebsiteActionPerformed(evt);
-            }
-        });
-
-=======
->>>>>>> origin/master
         lblWebsite.setText("Website:");
 
         btnSave.setText("Save");
@@ -60,12 +48,6 @@ public class AddMake extends javax.swing.JFrame {
             }
         });
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
-
-        lblAdminMenu.setFont(new java.awt.Font("Lato", 0, 24)); // NOI18N
-        lblAdminMenu.setText("Add Make");
-        lblAdminMenu.setToolTipText("Add make/brand/manufacturer");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,30 +55,23 @@ public class AddMake extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblWebsite)
                             .addComponent(lblMake))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(btnSave)
-                            .addComponent(txtboxMake)
-                            .addComponent(txtboxwebsite)
-                            .addComponent(lblAdminMenu))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblLogo)))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtboxMake, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                            .addComponent(txtboxwebsite)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(btnSave)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(lblLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblAdminMenu)
-                .addGap(29, 29, 29)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMake)
                     .addComponent(txtboxMake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -104,13 +79,9 @@ public class AddMake extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtboxwebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWebsite))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-=======
                 .addGap(34, 34, 34)
->>>>>>> origin/master
                 .addComponent(btnSave)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         pack();
@@ -140,10 +111,6 @@ public class AddMake extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnSaveActionPerformed
-
-    private void txtboxwebsiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtboxwebsiteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtboxwebsiteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,11 +149,6 @@ public class AddMake extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
-<<<<<<< HEAD
-    private javax.swing.JLabel lblAdminMenu;
-    private javax.swing.JLabel lblLogo;
-=======
->>>>>>> origin/master
     private javax.swing.JLabel lblMake;
     private javax.swing.JLabel lblWebsite;
     private javax.swing.JTextField txtboxMake;

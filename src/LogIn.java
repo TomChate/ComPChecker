@@ -17,8 +17,6 @@ public class LogIn extends javax.swing.JFrame {
      */
     public LogIn() {
         initComponents();
-        setSize(600,400);   //Sets the dimensions of the frame
-        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
     /**
@@ -35,28 +33,16 @@ public class LogIn extends javax.swing.JFrame {
         txtboxusername = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-<<<<<<< HEAD
-        buttonLogOn = new javax.swing.JButton();
-        lblCreate = new javax.swing.JLabel();
-        lblForgot = new javax.swing.JLabel();
-        passwordfield = new javax.swing.JPasswordField();
-        lblLogo = new javax.swing.JLabel();
-=======
         btnLogOn = new javax.swing.JButton();
         labelCreateAccount = new javax.swing.JLabel();
         labelCreateAccount1 = new javax.swing.JLabel();
         passwordfield = new javax.swing.JPasswordField();
         logo = new javax.swing.JLabel();
->>>>>>> origin/master
 
         jTextPane2.setText("Username:");
         jScrollPane2.setViewportView(jTextPane2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 400));
-        setPreferredSize(new java.awt.Dimension(600, 400));
-        setResizable(false);
-        setSize(new java.awt.Dimension(600, 400));
 
         txtboxusername.setToolTipText("");
 
@@ -71,26 +57,23 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        lblCreate.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
-        lblCreate.setForeground(new java.awt.Color(0, 0, 255));
-        lblCreate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreate.setText("Create Account");
-        lblCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lblCreate.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelCreateAccount.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        labelCreateAccount.setForeground(new java.awt.Color(0, 0, 255));
+        labelCreateAccount.setText("Create Account");
+        labelCreateAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        labelCreateAccount.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCreateMouseClicked(evt);
+                labelCreateAccountMouseClicked(evt);
             }
         });
 
-        lblForgot.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
-        lblForgot.setForeground(new java.awt.Color(0, 0, 255));
-        lblForgot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblForgot.setText("Forgot Password?");
-        lblForgot.setToolTipText("");
-        lblForgot.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lblForgot.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelCreateAccount1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        labelCreateAccount1.setForeground(new java.awt.Color(0, 0, 255));
+        labelCreateAccount1.setText("Forgot Password?");
+        labelCreateAccount1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        labelCreateAccount1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblForgotMouseClicked(evt);
+                labelCreateAccount1MouseClicked(evt);
             }
         });
 
@@ -100,30 +83,13 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
-=======
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
->>>>>>> origin/master
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(213, 213, 213)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblUsername)
-                    .addComponent(lblPassword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblForgot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonLogOn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtboxusername)
-                    .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,25 +114,14 @@ public class LogIn extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(labelCreateAccount1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
->>>>>>> origin/master
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblLogo)
-                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addContainerGap()
-                .addComponent(lblLogo)
-                .addGap(36, 36, 36)
-=======
                 .addGap(23, 23, 23)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
->>>>>>> origin/master
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblUsername)
                     .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -174,18 +129,13 @@ public class LogIn extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
                     .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addGap(18, 18, 18)
-                .addComponent(buttonLogOn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblForgot)
-=======
                 .addGap(28, 28, 28)
                 .addComponent(btnLogOn)
->>>>>>> origin/master
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addGap(80, 80, 80))
+                .addComponent(labelCreateAccount1)
+                .addGap(57, 57, 57)
+                .addComponent(labelCreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -210,18 +160,18 @@ public class LogIn extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnLogOnActionPerformed
 
-    private void lblCreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCreateMouseClicked
+    private void labelCreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccountMouseClicked
         // TODO add your handling code here:
         CreateAccount frm = new CreateAccount();
         this.setVisible(false);
         frm.setVisible(true);
 
 
-    }//GEN-LAST:event_lblCreateMouseClicked
+    }//GEN-LAST:event_labelCreateAccountMouseClicked
 
-    private void lblForgotMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblForgotMouseClicked
+    private void labelCreateAccount1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccount1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblForgotMouseClicked
+    }//GEN-LAST:event_labelCreateAccount1MouseClicked
 
     private void passwordfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordfieldActionPerformed
         // TODO add your handling code here:
@@ -263,16 +213,6 @@ public class LogIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton buttonLogOn;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JLabel lblCreate;
-    private javax.swing.JLabel lblForgot;
-    private javax.swing.JLabel lblLogo;
-    private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblUsername;
-=======
     private javax.swing.JButton btnLogOn;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane2;
@@ -281,7 +221,6 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel logo;
->>>>>>> origin/master
     private javax.swing.JPasswordField passwordfield;
     private javax.swing.JTextField txtboxusername;
     // End of variables declaration//GEN-END:variables

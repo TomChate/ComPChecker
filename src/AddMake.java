@@ -42,12 +42,15 @@ public class AddMake extends javax.swing.JFrame {
 
         lblMake.setText("Make:");
 
+<<<<<<< HEAD
         txtboxwebsite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtboxwebsiteActionPerformed(evt);
             }
         });
 
+=======
+>>>>>>> origin/master
         lblWebsite.setText("Website:");
 
         btnSave.setText("Save");
@@ -101,7 +104,11 @@ public class AddMake extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtboxwebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWebsite))
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+=======
+                .addGap(34, 34, 34)
+>>>>>>> origin/master
                 .addComponent(btnSave)
                 .addContainerGap(122, Short.MAX_VALUE))
         );
@@ -175,8 +182,11 @@ public class AddMake extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
+<<<<<<< HEAD
     private javax.swing.JLabel lblAdminMenu;
     private javax.swing.JLabel lblLogo;
+=======
+>>>>>>> origin/master
     private javax.swing.JLabel lblMake;
     private javax.swing.JLabel lblWebsite;
     private javax.swing.JTextField txtboxMake;

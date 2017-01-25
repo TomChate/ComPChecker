@@ -49,6 +49,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -62,6 +63,41 @@
                   <Component id="buttonLogOn" max="32767" attributes="0"/>
                   <Component id="txtboxusername" max="32767" attributes="0"/>
                   <Component id="passwordfield" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+=======
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="labelCreateAccount" min="-2" pref="102" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="logo" min="-2" pref="643" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPassword" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnLogOn" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtboxusername" max="32767" attributes="0"/>
+                          <Component id="passwordfield" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="labelCreateAccount1" min="-2" pref="111" max="-2" attributes="0"/>
+                  </Group>
+>>>>>>> origin/master
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -75,9 +111,15 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+<<<<<<< HEAD
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="logo" min="-2" pref="138" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+>>>>>>> origin/master
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
                   <Component id="txtboxusername" min="-2" max="-2" attributes="0"/>
@@ -87,10 +129,15 @@
                   <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="passwordfield" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="buttonLogOn" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblForgot" min="-2" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="btnLogOn" min="-2" max="-2" attributes="0"/>
+>>>>>>> origin/master
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblCreate" pref="34" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
@@ -114,12 +161,12 @@
         <Property name="text" type="java.lang.String" value="Password:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonLogOn">
+    <Component class="javax.swing.JButton" name="btnLogOn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log In"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLogOnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogOnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCreate">
@@ -164,7 +211,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordfieldActionPerformed"/>
       </Events>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JLabel" name="lblLogo">
+=======
+    <Component class="javax.swing.JLabel" name="logo">
+>>>>>>> origin/master
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/logo.png"/>

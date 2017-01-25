@@ -31,6 +31,7 @@ public class CreateAccount extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
+<<<<<<< HEAD
         lblUsername = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
@@ -46,6 +47,21 @@ public class CreateAccount extends javax.swing.JFrame {
         txtConfirmPass = new javax.swing.JPasswordField();
         lblCreateAccount = new javax.swing.JLabel();
         btnCancel = new javax.swing.JButton();
+=======
+        lblusername = new javax.swing.JLabel();
+        txtboxUsername = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
+        lblFname = new javax.swing.JLabel();
+        lblSname = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtboxName = new javax.swing.JTextField();
+        txtboxSurname = new javax.swing.JTextField();
+        txtboxEmail = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
+        lblConfPassword = new javax.swing.JLabel();
+        passwordfield = new javax.swing.JPasswordField();
+        passwordconfirmfield = new javax.swing.JPasswordField();
+>>>>>>> origin/master
         lblLogo = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -61,6 +77,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD
         lblUsername.setText("Username:");
 
         lblPassword.setText("Password:");
@@ -68,6 +85,15 @@ public class CreateAccount extends javax.swing.JFrame {
         lblForename.setText("Forename:");
 
         lblSurname.setText("Surname:");
+=======
+        lblusername.setText("Username:");
+
+        lblPassword.setText("Password:");
+
+        lblFname.setText("Forename:");
+
+        lblSname.setText("Surname:");
+>>>>>>> origin/master
 
         lblEmail.setText("Email:");
 
@@ -77,6 +103,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         btnCreate.setText("Create Account");
         btnCreate.setActionCommand("CreateAccount");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +125,20 @@ public class CreateAccount extends javax.swing.JFrame {
         });
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+=======
+        btnSubmit.setText("Create Account");
+        btnSubmit.setActionCommand("CreateAccount");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+
+        lblConfPassword.setText("Confirm Password:");
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+        lblLogo.setText("jLabel1");
+>>>>>>> origin/master
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,6 +146,7 @@ public class CreateAccount extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
                 .addComponent(lblLogo)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -139,10 +181,43 @@ public class CreateAccount extends javax.swing.JFrame {
                                 .addComponent(passwordfield)
                                 .addComponent(txtConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFname)
+                            .addComponent(lblSname)
+                            .addComponent(lblEmail))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtboxName)
+                            .addComponent(txtboxSurname)
+                            .addComponent(txtboxEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblusername)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblPassword)
+                                .addGap(3, 3, 3))
+                            .addComponent(lblConfPassword))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtboxUsername)
+                            .addComponent(passwordfield)
+                            .addComponent(passwordconfirmfield, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(73, 73, 73)
+                .addComponent(btnSubmit)
+                .addGap(28, 28, 28))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+>>>>>>> origin/master
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap()
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -176,6 +251,41 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCancel)
                 .addContainerGap(18, Short.MAX_VALUE))
+=======
+                .addGap(24, 24, 24)
+                .addComponent(lblLogo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSubmit)
+                        .addGap(26, 26, 26))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblusername)
+                            .addComponent(txtboxUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPassword)
+                            .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblConfPassword)
+                            .addComponent(passwordconfirmfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblFname)
+                            .addComponent(txtboxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSname)
+                            .addComponent(txtboxSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEmail)
+                            .addComponent(txtboxEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(47, Short.MAX_VALUE))))
+>>>>>>> origin/master
         );
 
         pack();
@@ -185,6 +295,7 @@ public class CreateAccount extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtForenameActionPerformed
 
+<<<<<<< HEAD
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         
         //We need to add validation for the different entries here
@@ -192,6 +303,10 @@ public class CreateAccount extends javax.swing.JFrame {
         //I saw Pawel did something like that in the mock-up, was all.
         
         String username = txtUsername.getText();    
+=======
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        String username = txtboxUsername.getText();    
+>>>>>>> origin/master
         String password = String.valueOf(passwordfield.getPassword());
         String passwordConfirm = String.valueOf(txtConfirmPass.getPassword());
         
@@ -232,11 +347,15 @@ public class CreateAccount extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Please complete all fields!", "Complete All fields", JOptionPane.INFORMATION_MESSAGE);
             }
         }
+<<<<<<< HEAD
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelActionPerformed
+=======
+    }//GEN-LAST:event_btnSubmitActionPerformed
+>>>>>>> origin/master
 
 
     /**
@@ -275,6 +394,7 @@ public class CreateAccount extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCreate;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -286,6 +406,18 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblSurname;
     private javax.swing.JLabel lblUsername;
+=======
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLabel lblConfPassword;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblFname;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblSname;
+    private javax.swing.JLabel lblusername;
+    private javax.swing.JPasswordField passwordconfirmfield;
+>>>>>>> origin/master
     private javax.swing.JPasswordField passwordfield;
     private javax.swing.JPasswordField txtConfirmPass;
     private javax.swing.JTextField txtEmail;

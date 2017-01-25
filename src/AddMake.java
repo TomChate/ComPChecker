@@ -18,6 +18,7 @@ public class AddMake extends javax.swing.JFrame {
      */
     public AddMake() {
         initComponents();
+        setSize(800,400);
     }
 
     /**

@@ -17,6 +17,7 @@ public class LogIn extends javax.swing.JFrame {
      */
     public LogIn() {
         initComponents();
+        setSize(800,400);
     }
 
     /**
@@ -43,6 +44,9 @@ public class LogIn extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextPane2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 400));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 400));
 
         txtboxusername.setToolTipText("");
 

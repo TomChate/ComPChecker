@@ -18,7 +18,8 @@ public class AddMake extends javax.swing.JFrame {
      */
     public AddMake() {
         initComponents();
-        setSize(800,400);
+        //setSize(800,400);
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
     /**

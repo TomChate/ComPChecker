@@ -17,7 +17,7 @@ public class LogIn extends javax.swing.JFrame {
      */
     public LogIn() {
         initComponents();
-        setSize(600,400);   //Sets the dimensions of the frame
+        //setSize(600,400);   //Sets the dimensions of the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 

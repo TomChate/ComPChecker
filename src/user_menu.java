@@ -13,8 +13,12 @@ public class user_menu extends javax.swing.JFrame {
     /**
      * Creates new form user_menu
      */
-    public user_menu() {
+    UserAccount currentUser;
+    public user_menu(UserAccount user) {
         initComponents();
+        currentUser = user;
+    }
+    public user_menu() {
     }
 
     /**
@@ -40,6 +44,11 @@ public class user_menu extends javax.swing.JFrame {
         lable.setText("Previous Builds");
 
         Build1.setText("Build");
+        Build1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Build1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,6 +123,10 @@ public class user_menu extends javax.swing.JFrame {
     private void logOffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOffButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logOffButtonActionPerformed
+
+    private void Build1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Build1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Build1ActionPerformed
 
     /**
      * @param args the command line arguments

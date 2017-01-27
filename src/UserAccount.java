@@ -58,6 +58,8 @@ public class UserAccount {
                 if (dbUname.equals(enteredUname) && dbPassword.equals(enteredPass)) { //Comparison check
                     setType(dbType); //Sets type of user.
                     con.close();
+                    setUsername(dbUname);
+                    setPassword(dbPassword);
                     return true;
 
                 }
@@ -72,6 +74,69 @@ public class UserAccount {
 
     }
 
+    public boolean checkPassword(String username, String password){
+           Connection con = DatabaseConnection.establishConnection();
+           String user = username;
+           String enteredPassword = password;
+            try {
+            Statement stmt = (Statement) con.createStatement();
+            String query = ("SELECT ID, Password FROM Account WHERE ID='" + user+"'");
+
+            stmt.executeQuery(query);
+            ResultSet rs = stmt.getResultSet();
+
+            while (rs.next()) {
+                   String dbPassword = rs.getString("Password");
+                   if(dbPassword == enteredPassword){
+                   return true;
+                   
+                   }else{
+                       return false;
+                       
+                   }
+                       
+                       
+                   
+            
+
+                }
+            
+
+            }
+
+        catch (SQLException err) {
+            System.out.println(err.getMessage());   //Prints out SQL error 
+            return false;
+        }
+        
+        
+        
+         return false;
+            }
+   
+    
+    
+    
+    
+    public void changePassword(String username, String newPassword){
+    Connection con = DatabaseConnection.establishConnection();
+    String user = username;
+    String password = newPassword;
+    try {
+    
+       
+       String query = ("UPDATE Account SET Password '" + password + "' WHERE Username = '" + username +"' ;  ");
+       PreparedStatement statement = con.prepareStatement(query);
+    
+ 
+    }
+    catch(SQLException err){
+        
+    
+    }
+    
+    
+    }
     /**
      *
      * @param username

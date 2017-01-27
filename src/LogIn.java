@@ -148,12 +148,20 @@ public class LogIn extends javax.swing.JFrame {
         System.out.println(password);
 
         UserAccount user = new UserAccount();
-
         boolean successful = user.LogInService(username, password);
         if (successful) {
+            boolean type = user.getType();
+            if(type){
             AddMake frm = new AddMake();
             this.setVisible(false);
             frm.setVisible(true);
+            }else{
+            user_menu frm = new user_menu(user);
+            this.setVisible(false);
+            frm.setVisible(true);
+            
+            
+            }
         } else {
             JOptionPane.showMessageDialog(null, "User account can not be found. Please try again or create a new account", "No Account Found", JOptionPane.INFORMATION_MESSAGE);
         }

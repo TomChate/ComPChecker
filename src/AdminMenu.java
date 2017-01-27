@@ -13,12 +13,18 @@ public class AdminMenu extends javax.swing.JFrame {
     /**
      * Creates new form AdminMenu
      */
+    UserAccount currentUser;
     public AdminMenu() {
         initComponents();
         //setSize(600,400);   //Sets the dimensions of the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
-
+ public AdminMenu(UserAccount user) {
+        initComponents();
+        //setSize(600,400);   //Sets the dimensions of the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+        currentUser = user;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -154,6 +154,7 @@ public class LogIn extends javax.swing.JFrame {
             if(type){
             AdminMenu frm = new AdminMenu(user);
             this.setVisible(false);
+            
             frm.setVisible(true);
             }else{
             user_menu frm = new user_menu(user);

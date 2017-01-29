@@ -35,7 +35,7 @@ public class LogIn extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         btnLogOn = new javax.swing.JButton();
         labelCreateAccount = new javax.swing.JLabel();
-        labelCreateAccount1 = new javax.swing.JLabel();
+        lblChangePassword = new javax.swing.JLabel();
         passwordfield = new javax.swing.JPasswordField();
         logo = new javax.swing.JLabel();
 
@@ -67,13 +67,13 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        labelCreateAccount1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
-        labelCreateAccount1.setForeground(new java.awt.Color(0, 0, 255));
-        labelCreateAccount1.setText("Forgot Password?");
-        labelCreateAccount1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        labelCreateAccount1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblChangePassword.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        lblChangePassword.setForeground(new java.awt.Color(0, 0, 255));
+        lblChangePassword.setText("Forgot Password?");
+        lblChangePassword.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblChangePassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelCreateAccount1MouseClicked(evt);
+                lblChangePasswordMouseClicked(evt);
             }
         });
 
@@ -113,7 +113,7 @@ public class LogIn extends javax.swing.JFrame {
                             .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(labelCreateAccount1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -132,7 +132,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(btnLogOn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelCreateAccount1)
+                .addComponent(lblChangePassword)
                 .addGap(57, 57, 57)
                 .addComponent(labelCreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -177,15 +177,19 @@ public class LogIn extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_labelCreateAccountMouseClicked
-
-    private void labelCreateAccount1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccount1MouseClicked
+  
+    private void lblChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePasswordMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_labelCreateAccount1MouseClicked
+        ChangePassword frm = new ChangePassword();
+        this.setVisible(false);
+        frm.setVisible(true);
+    }//GEN-LAST:event_lblChangePasswordMouseClicked
 
     private void passwordfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordfieldActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -226,7 +230,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JLabel labelCreateAccount;
-    private javax.swing.JLabel labelCreateAccount1;
+    private javax.swing.JLabel lblChangePassword;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel logo;

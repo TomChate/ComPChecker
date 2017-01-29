@@ -27,6 +27,10 @@ public class ChangePassword extends javax.swing.JDialog {
         initComponents();
         currentUser = user;
     }
+    
+    public ChangePassword(){
+     initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -75,6 +75,28 @@ public class Make {
         this.website = website;
     }
 
+       public ResultSet  getMakes(){
+              Connection con = DatabaseConnection.establishConnection();
+       try {
+            int availability;
+            Statement stmt = (Statement) con.createStatement();
+            String query = ("SELECT Name FROM Make ORDER BY Name;");
+
+            stmt.executeQuery(query);
+            ResultSet rs = stmt.getResultSet();
+            return rs;
+            
+        } catch (SQLException err) {
+
+            System.out.println(err.getMessage());
+            return null;
+        }
+       
+       
+       }
+       
+       
+       
 }
 
 

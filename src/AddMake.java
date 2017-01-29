@@ -34,6 +34,7 @@ public class AddMake extends javax.swing.JFrame {
         txtboxwebsite = new javax.swing.JTextField();
         lblWebsite = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
+        btnReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,6 +46,13 @@ public class AddMake extends javax.swing.JFrame {
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
+            }
+        });
+
+        btnReturn.setText("Return");
+        btnReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnActionPerformed(evt);
             }
         });
 
@@ -67,6 +75,10 @@ public class AddMake extends javax.swing.JFrame {
                         .addGap(154, 154, 154)
                         .addComponent(btnSave)))
                 .addContainerGap(52, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnReturn)
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +93,9 @@ public class AddMake extends javax.swing.JFrame {
                     .addComponent(lblWebsite))
                 .addGap(34, 34, 34)
                 .addComponent(btnSave)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(btnReturn)
+                .addGap(73, 73, 73))
         );
 
         pack();
@@ -94,23 +108,28 @@ public class AddMake extends javax.swing.JFrame {
         Make make = new Make();
         make.setName(name);
         make.setWebsite(website);
-        boolean used = make.checkMakes(name);
-       if(name!= null && website != null){
+        
+       if(name.isEmpty() ||  website.isEmpty()){
+           JOptionPane.showMessageDialog(null, "Please complete all fields", "Please complete all fields", JOptionPane.INFORMATION_MESSAGE);
+       }else{
            
-           
+           boolean used = make.checkMakes(name);
         if(used){
+            
             make.saveMake();
         }else{
         JOptionPane.showMessageDialog(null, "That make is already stored in the database.", "Make already stored", JOptionPane.INFORMATION_MESSAGE);
-        }}
-       else{
-        JOptionPane.showMessageDialog(null, "Please complete all fields", "Please complete all fields", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
        }
         
-        
-        
-        
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new AdminMenu().setVisible(true);
+    }//GEN-LAST:event_btnReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,6 +167,7 @@ public class AddMake extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel lblMake;
     private javax.swing.JLabel lblWebsite;

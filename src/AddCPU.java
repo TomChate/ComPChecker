@@ -1,6 +1,8 @@
 
+import static java.lang.Double.parseDouble;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -42,8 +44,8 @@ public class AddCPU extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radioYes = new javax.swing.JRadioButton();
+        RadioNo = new javax.swing.JRadioButton();
         txtboxCores = new javax.swing.JTextField();
         txtboxSpeed = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
@@ -69,12 +71,12 @@ public class AddCPU extends javax.swing.JDialog {
 
         jLabel4.setText("Internal Graphics:");
 
-        jRadioButton1.setText("Yes");
+        radioYes.setText("Yes");
 
-        jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        RadioNo.setText("No");
+        RadioNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                RadioNoActionPerformed(evt);
             }
         });
 
@@ -109,8 +111,8 @@ public class AddCPU extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)))
+                            .addComponent(RadioNo)
+                            .addComponent(radioYes)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -148,9 +150,9 @@ public class AddCPU extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jRadioButton1))
+                    .addComponent(radioYes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(RadioNo)
                 .addGap(18, 18, 18)
                 .addComponent(btnSave)
                 .addGap(29, 29, 29))
@@ -163,28 +165,59 @@ public class AddCPU extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmboxMakeActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void RadioNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioNoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_RadioNoActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         CPU cpu = new CPU();
-        String make = cmboxMake.toString();
-        String text = txtboxSpeed.toString();
+        String make = cmboxMake.getSelectedItem().toString();
+        String text = txtboxSpeed.getText();
+        String model = txtboxModel.getText();
+        double price = 0;
+        
         float speed = 0;
         int cores = 0;
         
         if (text != null && !text.isEmpty()) {
              speed = Float.parseFloat(text);
         }
-        text = txtboxCores.toString();
+        text = txtboxCores.getText();
         if (text != null && !text.isEmpty()) {
              cores = Integer.parseInt(text);
         }
+        text = txtboxPrice.getText();
+          if (text != null && !text.isEmpty()) {
+             price = parseDouble(text);
+        }
+         
         cpu.make = make;
+        cpu.model = model;
         cpu.speed = speed;
         cpu.cores = cores;
+        cpu.price = price;
+        if(radioYes.isSelected()){
+        cpu.graphics=true;
+        
+        }else{
+        cpu.graphics = false;
+        }
+             JOptionPane.showMessageDialog(null, make,"", JOptionPane.INFORMATION_MESSAGE);
+             JOptionPane.showMessageDialog(null, model,"", JOptionPane.INFORMATION_MESSAGE);
+             JOptionPane.showMessageDialog(null, speed,"", JOptionPane.INFORMATION_MESSAGE);
+             JOptionPane.showMessageDialog(null, cores,"", JOptionPane.INFORMATION_MESSAGE);
+             JOptionPane.showMessageDialog(null, price,"", JOptionPane.INFORMATION_MESSAGE);
+        boolean result = cpu.saveCPU();
+        if(result){
+        JOptionPane.showMessageDialog(null, "good ","", JOptionPane.INFORMATION_MESSAGE);
+        
+        }else{
+        JOptionPane.showMessageDialog(null, "fail ","", JOptionPane.INFORMATION_MESSAGE);
+        
+        }
+        
+        
         
 
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -251,6 +284,7 @@ public class AddCPU extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton RadioNo;
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmboxMake;
     private javax.swing.JLabel jLabel1;
@@ -259,8 +293,7 @@ public class AddCPU extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton radioYes;
     private javax.swing.JTextField txtboxCores;
     private javax.swing.JTextField txtboxModel;
     private javax.swing.JTextField txtboxPrice;

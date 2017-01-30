@@ -1,14 +1,15 @@
 
-import javafx.scene.control.TableColumn;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumnModel;
+import java.sql.Connection;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Luke
@@ -19,12 +20,30 @@ public class ChooseComponent extends javax.swing.JFrame {
      * Creates new form ChooseComponent
      */
     public ChooseComponent() {
-        initComponents();
-        JTableHeader th = tblComponents.getTableHeader();
-        TableColumnModel tcm = th.getColumnModel();
-        javax.swing.table.TableColumn tc = tcm.getColumn(0);
-        tc.setHeaderValue( "???" );
-        th.repaint();
+        
+        Connection con = DatabaseConnection.establishConnection();
+        
+        
+        DefaultTableModel model = (DefaultTableModel) tblComponents.getModel();
+        model.setRowCount(0);   //Resets rows each time form is opened
+        CPU cpu = new CPU(); //Need to setup the class (If we're doing it that way)
+        
+        ResultSet rs;
+        Make make = new Make();
+        rs = make.getMakes();
+        try {
+            while (rs.next()) {
+                String dbMake = rs.getString("Name");
+
+            }
+        } catch (SQLException err) {
+            System.out.println(err.getMessage());   //Prints out SQL error 
+        }
+        
+        String[][] CPUs = a.getCPUs();//Here is where you'd get the result set
+        for (String[] row : CPUs) {
+            model.addRow(row);
+        }
     }
 
     /**

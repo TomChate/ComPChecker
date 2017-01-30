@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
  * @author Luke
  */
 public class EditBuild extends javax.swing.JFrame {
+    String myPart = "";
 
     /**
      * Creates new form EditBuild
@@ -126,12 +127,15 @@ public class EditBuild extends javax.swing.JFrame {
         });
 
         btnCancel.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancel.setForeground(new java.awt.Color(255, 0, 0));
         btnCancel.setText("✘");
 
         btnConfirm.setBackground(new java.awt.Color(0, 255, 0));
-        btnConfirm.setForeground(new java.awt.Color(0, 255, 0));
         btnConfirm.setText("✔");
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,12 +203,16 @@ public class EditBuild extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void getPart() {
+        System.out.println (myPart);
+}
+    
     private void btnRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRAMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRAMActionPerformed
 
     private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
-        
+        myPart = "CPU";
     }//GEN-LAST:event_btnProcessorActionPerformed
 
     private void btnMotherboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherboardActionPerformed
@@ -234,6 +242,10 @@ public class EditBuild extends javax.swing.JFrame {
     private void btnAccessoriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccessoriesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccessoriesActionPerformed
+
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        getPart();
+    }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void hideButtons() {
         btnProcessor.setVisible(false);

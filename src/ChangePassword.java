@@ -27,7 +27,7 @@ public class ChangePassword extends javax.swing.JDialog {
         initComponents();
         currentUser = user;
     }
-    
+    // constructor set to reference login
     public ChangePassword(){
      initComponents();
     }
@@ -119,21 +119,26 @@ public class ChangePassword extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * This method is used to validate the user inputs of the password change form
+     */
+    
     private void buttonChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonChangeActionPerformed
         // TODO add your handling code here:
         String oldPassword = String.valueOf(oldpasswordfield.getPassword());
         String password = String.valueOf(passwordfield.getPassword());
         String passwordConfirm = String.valueOf(passwordconfirmfield.getPassword());
-
+        //if inputs are empty a error message is printed
         if (oldPassword.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please complete all fields!", "Complete All fields", JOptionPane.INFORMATION_MESSAGE);
-
+            //netbeans connection to database vm
         } else if (password == passwordConfirm) {
             Connection con = DatabaseConnection.establishConnection();
             String username = currentUser.getUsername();
-
+            //checks if passwords entered are the same as the old pw
             boolean passwordSame = currentUser.checkPassword(username, oldPassword);
-
+            //will change the password into the database
             if (passwordSame) {
                 currentUser.changePassword(username,password);
                   JOptionPane.showMessageDialog(null, "Password Changed", "Successful", JOptionPane.INFORMATION_MESSAGE);
@@ -142,7 +147,7 @@ public class ChangePassword extends javax.swing.JDialog {
                 
                 
             } else {
-
+                //print error
                 JOptionPane.showMessageDialog(null, "The entered password does not match the password stored.", "Password Error", JOptionPane.INFORMATION_MESSAGE);
 
             }

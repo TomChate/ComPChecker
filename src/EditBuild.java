@@ -125,8 +125,12 @@ public class EditBuild extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancel.setForeground(new java.awt.Color(255, 0, 0));
         btnCancel.setText("✘");
 
+        btnConfirm.setBackground(new java.awt.Color(0, 255, 0));
+        btnConfirm.setForeground(new java.awt.Color(0, 255, 0));
         btnConfirm.setText("✔");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

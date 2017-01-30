@@ -203,8 +203,9 @@ public class EditBuild extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void getPart() {
+    public String getPart() {
         System.out.println (myPart);
+        return myPart;
 }
     
     private void btnRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRAMActionPerformed

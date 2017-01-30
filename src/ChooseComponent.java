@@ -3,6 +3,9 @@ import java.sql.Connection;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.lang.reflect.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /*
@@ -19,31 +22,41 @@ public class ChooseComponent extends javax.swing.JFrame {
     /**
      * Creates new form ChooseComponent
      */
-    public ChooseComponent() {
+    public ChooseComponent() throws ClassNotFoundException, NoSuchMethodException, 
+            InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        
+        //initComponents();
         
         Connection con = DatabaseConnection.establishConnection();
         
-        
         DefaultTableModel model = (DefaultTableModel) tblComponents.getModel();
         model.setRowCount(0);   //Resets rows each time form is opened
-        CPU cpu = new CPU(); //Need to setup the class (If we're doing it that way)
         
-        ResultSet rs;
-        Make make = new Make();
-        rs = make.getMakes();
-        try {
-            while (rs.next()) {
-                String dbMake = rs.getString("Name");
-
-            }
-        } catch (SQLException err) {
-            System.out.println(err.getMessage());   //Prints out SQL error 
-        }
+        //Trying to sort out creating a class from the passed variable
+        EditBuild myBuild = new EditBuild();
+        String className = myBuild.getPart();
+        Class cl = Class.forName(className);
+        Constructor cons = cl.getConstructor(String.class, String.class);
+        Object xyz = cons.newInstance();
         
-        String[][] CPUs = a.getCPUs();//Here is where you'd get the result set
-        for (String[] row : CPUs) {
-            model.addRow(row);
-        }
+//        CPU cpu = new CPU(); //Need to setup the class (If we're doing it that way)
+//        
+//        ResultSet rs;
+//        Make make = new Make();
+//        rs = make.getMakes();
+//        try {
+//            while (rs.next()) {
+//                String dbMake = rs.getString("Name");
+//
+//            }
+//        } catch (SQLException err) {
+//            System.out.println(err.getMessage());   //Prints out SQL error 
+//        }
+//        
+//        String[][] CPUs = a.getCPUs();//Here is where you'd get the result set
+//        for (String[] row : CPUs) {
+//            model.addRow(row);
+//        }
     }
 
     /**
@@ -117,7 +130,21 @@ public class ChooseComponent extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChooseComponent().setVisible(true);
+                try {
+                    new ChooseComponent().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ChooseComponent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (NoSuchMethodException ex) {
+                    Logger.getLogger(ChooseComponent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(ChooseComponent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(ChooseComponent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalArgumentException ex) {
+                    Logger.getLogger(ChooseComponent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InvocationTargetException ex) {
+                    Logger.getLogger(ChooseComponent.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

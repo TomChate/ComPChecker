@@ -43,9 +43,6 @@ public class AddCPU extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        radioYes = new javax.swing.JRadioButton();
-        RadioNo = new javax.swing.JRadioButton();
         txtboxCores = new javax.swing.JTextField();
         txtboxSpeed = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
@@ -69,17 +66,6 @@ public class AddCPU extends javax.swing.JDialog {
 
         jLabel3.setText("Cores:");
 
-        jLabel4.setText("Internal Graphics:");
-
-        radioYes.setText("Yes");
-
-        RadioNo.setText("No");
-        RadioNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RadioNoActionPerformed(evt);
-            }
-        });
-
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,10 +82,9 @@ public class AddCPU extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(122, 122, 122)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
@@ -109,20 +94,14 @@ public class AddCPU extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSave))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RadioNo)
-                            .addComponent(radioYes)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cmboxMake, 0, 140, Short.MAX_VALUE)
                             .addComponent(txtboxModel)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtboxPrice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                                .addComponent(txtboxCores, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtboxSpeed, javax.swing.GroupLayout.Alignment.LEADING)))))
-                .addContainerGap(84, Short.MAX_VALUE))
+                            .addComponent(txtboxPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(txtboxCores)
+                            .addComponent(txtboxSpeed))))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,13 +126,7 @@ public class AddCPU extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtboxCores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(radioYes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RadioNo)
-                .addGap(18, 18, 18)
+                .addGap(66, 66, 66)
                 .addComponent(btnSave)
                 .addGap(29, 29, 29))
         );
@@ -164,10 +137,6 @@ public class AddCPU extends javax.swing.JDialog {
     private void cmboxMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmboxMakeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmboxMakeActionPerformed
-
-    private void RadioNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RadioNoActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
@@ -197,12 +166,7 @@ public class AddCPU extends javax.swing.JDialog {
         cpu.speed = speed;
         cpu.cores = cores;
         cpu.price = price;
-        if(radioYes.isSelected()){
-        cpu.graphics=true;
-        
-        }else{
-        cpu.graphics = false;
-        }
+
              JOptionPane.showMessageDialog(null, make,"", JOptionPane.INFORMATION_MESSAGE);
              JOptionPane.showMessageDialog(null, model,"", JOptionPane.INFORMATION_MESSAGE);
              JOptionPane.showMessageDialog(null, speed,"", JOptionPane.INFORMATION_MESSAGE);
@@ -284,16 +248,13 @@ public class AddCPU extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton RadioNo;
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmboxMake;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton radioYes;
     private javax.swing.JTextField txtboxCores;
     private javax.swing.JTextField txtboxModel;
     private javax.swing.JTextField txtboxPrice;

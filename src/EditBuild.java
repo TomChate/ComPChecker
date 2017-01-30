@@ -204,7 +204,7 @@ public class EditBuild extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRAMActionPerformed
 
     private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnProcessorActionPerformed
 
     private void btnMotherboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherboardActionPerformed
@@ -235,6 +235,31 @@ public class EditBuild extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccessoriesActionPerformed
 
+    private void hideButtons() {
+        btnProcessor.setVisible(false);
+        btnMotherboard.setVisible(false);
+        btnRAM.setVisible(false);
+        btnGraphics.setVisible(false);
+        btnStorage.setVisible(false);
+        btnCase.setVisible(false);
+        btnPowerSup.setVisible(false);
+        btnCooling.setVisible(false);
+        btnAccessories.setVisible(false);
+    }
+    
+    //Could maybe save repetition here by creating a toggle/passing a variable?
+    private void showButtons() {
+        btnProcessor.setVisible(true);
+        btnMotherboard.setVisible(true);
+        btnRAM.setVisible(true);
+        btnGraphics.setVisible(true);
+        btnStorage.setVisible(true);
+        btnCase.setVisible(true);
+        btnPowerSup.setVisible(true);
+        btnCooling.setVisible(true);
+        btnAccessories.setVisible(true);
+    }
+    
     /**
      * @param args the command line arguments
      */

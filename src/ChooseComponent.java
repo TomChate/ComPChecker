@@ -27,7 +27,7 @@ public class ChooseComponent extends javax.swing.JFrame {
         
         //initComponents();
         
-        Connection con = DatabaseConnection.establishConnection();
+        //Connection con = DatabaseConnection.establishConnection();
         
         DefaultTableModel model = (DefaultTableModel) tblComponents.getModel();
         model.setRowCount(0);   //Resets rows each time form is opened
@@ -37,7 +37,9 @@ public class ChooseComponent extends javax.swing.JFrame {
         String className = myBuild.getPart();
         Class cl = Class.forName(className);
         Constructor cons = cl.getConstructor(String.class, String.class);
-        Object xyz = cons.newInstance();
+        Object myPart = cons.newInstance();
+        
+        System.out.println(myPart);
         
 //        CPU cpu = new CPU(); //Need to setup the class (If we're doing it that way)
 //        

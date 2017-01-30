@@ -5,10 +5,10 @@
         <group>
             <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/EditBuild.java</file>
             <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/AddCPU.java</file>
-            <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/LogIn.java</file>
-            <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/AddMake.java</file>
+            <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/Make.java</file>
             <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/AdminMenu.java</file>
             <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/ChooseComponent.java</file>
+            <file>file:/C:/Users/Luke/Documents/GitHub/ComPChecker/src/CPU.java</file>
         </group>
     </open-files>
 </project-private>

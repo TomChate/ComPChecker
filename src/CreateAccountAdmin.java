@@ -190,23 +190,19 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
         String username = txtboxUsername.getText();
         String password = String.valueOf(passwordfield.getPassword());
         String passwordConfirm = String.valueOf(passwordconfirmfield.getPassword());
-
+        
         String name = txtboxName.getText();
         String surname = txtboxSurname.getText();
         String email = txtboxEmail.getText();
         String type = comboboxType.toString();
         boolean admin = false;
+       
+    /**
+    * returns whether the user is general or admin user type. 
+    */
         if(type == "Admin"){
             admin = true;
-    
         }            
-            
-            
-     
-        
-        
-        
-        
         boolean confirm = true;
         
         if((username.isEmpty()|| password.isEmpty()) || passwordConfirm.isEmpty() || name.isEmpty() || surname.isEmpty() || email.isEmpty()){
@@ -214,7 +210,9 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
         confirm = false;
         }
         
-        
+    /**
+    *checks completion of input boxes, if incomplete. error message is printed.
+    */
         if (confirm) { //Checks to see all fields are complete.
             int emailValidation = email.indexOf('@');
             if (emailValidation >= 0) {

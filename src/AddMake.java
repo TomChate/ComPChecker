@@ -110,31 +110,35 @@ public class AddMake extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        // get user inputs:
         String name = txtboxMake.getText();
         String website = txtboxwebsite.getText();
+        
+        // sets a new make with name of make and website
         Make make = new Make();
         make.setName(name);
         make.setWebsite(website);
         
+        //if input boxes are empty print error message
        if(name.isEmpty() ||  website.isEmpty()){
            JOptionPane.showMessageDialog(null, "Please complete all fields", "Please complete all fields", JOptionPane.INFORMATION_MESSAGE);
        }else{
-           
+           // check if make is already in datababse
            boolean used = make.checkMakes(name);
         if(used){
-            
+            //if not used save to database
             make.saveMake();
         }else{
+            //print error
         JOptionPane.showMessageDialog(null, "That make is already stored in the database.", "Make already stored", JOptionPane.INFORMATION_MESSAGE);
         }
         
        }
         
     }//GEN-LAST:event_btnSaveActionPerformed
-
+    
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
-        // TODO add your handling code here:
+        // show admin menu from make build
         this.setVisible(false);
         new AdminMenu().setVisible(true);
     }//GEN-LAST:event_btnReturnActionPerformed
@@ -169,6 +173,7 @@ public class AddMake extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                //show make interface
                 new AddMake().setVisible(true);
             }
         });

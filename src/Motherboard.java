@@ -71,11 +71,9 @@ public class Motherboard {
      * @param slots
      */
     public void setRamSlots(int slots) {
-        this.ramSlots =slots;
+        this.ramSlots = slots;
     }
 
-  
-        
     /**
      *
      * @param max
@@ -85,6 +83,8 @@ public class Motherboard {
     }
 
     public boolean saveMotherboard() {
+        
+        
         Connection con = DatabaseConnection.establishConnection();
 
         try {
@@ -99,20 +99,24 @@ public class Motherboard {
             statement.setString(4, "Motherboard");
             statement.execute();
             String model = this.model;
+            
             query = "SELECT * FROM Part WHERE Model ='" + model + "' && PartType = 'Motherboard'";
-
+            System.out.println("first query");
             statement.executeQuery(query);
+
             ResultSet rs = statement.getResultSet();
             int partID = 0;
             while (rs.next()) {
                 partID = rs.getInt("PartID");
             }
+
             query = "INSERT INTO Motherboard values (?,?,?,?,?)";
+             statement = con.prepareStatement(query);
             statement.setInt(1, partID);
-            statement.setString(2, this.socket);
-            statement.setString(3, this.size);
-            statement.setInt(4, this.ramSlots);
-             statement.setInt(5, this.maxRAM);
+            statement.setString(2, socket);
+            statement.setString(3, size);
+            statement.setInt(4, ramSlots);
+            statement.setInt(5, maxRAM);
             statement.execute();
             return true;
         } catch (SQLException err) {

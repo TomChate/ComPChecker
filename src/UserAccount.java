@@ -62,7 +62,6 @@ public class UserAccount {
                     setUsername(dbUname);
                     setPassword(dbPassword);
                     return true;
-
                 }
 
             }

@@ -149,44 +149,28 @@ public class AddCPU extends javax.swing.JDialog {
         String text = txtboxSpeed.getText();
         String model = txtboxModel.getText();
         double price = 0;
-        
+
         float speed = 0;
         int cores = 0;
-        
+
         if (text != null && !text.isEmpty()) {
-             speed = Float.parseFloat(text);
+            speed = Float.parseFloat(text);
         }
         text = txtboxCores.getText();
         if (text != null && !text.isEmpty()) {
-             cores = Integer.parseInt(text);
+            cores = Integer.parseInt(text);
         }
         text = txtboxPrice.getText();
-          if (text != null && !text.isEmpty()) {
-             price = parseDouble(text);
+        if (text != null && !text.isEmpty()) {
+            price = parseDouble(text);
         }
-         
+
         cpu.make = make;
         cpu.model = model;
         cpu.speed = speed;
         cpu.cores = cores;
         cpu.price = price;
 
-             JOptionPane.showMessageDialog(null, make,"", JOptionPane.INFORMATION_MESSAGE);
-             JOptionPane.showMessageDialog(null, model,"", JOptionPane.INFORMATION_MESSAGE);
-             JOptionPane.showMessageDialog(null, speed,"", JOptionPane.INFORMATION_MESSAGE);
-             JOptionPane.showMessageDialog(null, cores,"", JOptionPane.INFORMATION_MESSAGE);
-             JOptionPane.showMessageDialog(null, price,"", JOptionPane.INFORMATION_MESSAGE);
-        boolean result = cpu.saveCPU();
-        if(result){
-        JOptionPane.showMessageDialog(null, "good ","", JOptionPane.INFORMATION_MESSAGE);
-        
-        }else{
-        JOptionPane.showMessageDialog(null, "fail ","", JOptionPane.INFORMATION_MESSAGE);
-        
-        }
-        
-        
-        
 
     }//GEN-LAST:event_btnSaveActionPerformed
 

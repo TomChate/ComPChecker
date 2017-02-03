@@ -12,6 +12,7 @@
  * @version 1.0
  * @since 20/01/2017
  */
+//sets packages needed
 import java.sql.DriverManager;
 import java.net.*;
 import java.io.*;
@@ -34,14 +35,14 @@ public class DatabaseConnection {
         try {
  
             String host = "jdbc:mysql://213.104.129.95:3306/ComPChecker";   //Location of mySQL server
-            String uName = "root";          
+            String uName = "root";    //account details for accessing database      
             String uPass = "root";
             Connection con = DriverManager.getConnection(host, uName, uPass);
             System.out.println("Connected database successfully...");
 
             return con;
         } catch (SQLException err) {
-            System.out.println(err.getMessage());   //Prints out SQL error 
+            System.out.println(err.getMessage());   //Prints out SQL error if connection is not established
             return null;
         }
     }
@@ -51,7 +52,7 @@ public class DatabaseConnection {
      * @param con
      */
     public void closeConnection(Connection con){
-    
+    //end of connection
         try{
         con.close();
         }catch(SQLException err){

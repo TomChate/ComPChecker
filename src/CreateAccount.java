@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Tom
+ * @author Lillie
  */
 public class CreateAccount extends javax.swing.JFrame {
 
@@ -169,6 +170,7 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtboxNameActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        //gets all user inputs from create account form
         String username = txtboxUsername.getText();
         String password = String.valueOf(passwordfield.getPassword());
         String passwordConfirm = String.valueOf(passwordconfirmfield.getPassword());
@@ -189,7 +191,7 @@ public class CreateAccount extends javax.swing.JFrame {
         confirm = false;
         }
         
-        
+        // validation process, sets lenths and types needed to validate form
         if (confirm) { //Checks to see all fields are complete.
             int emailValidation = email.indexOf('@');
             if (emailValidation >= 0) {
@@ -208,13 +210,14 @@ public class CreateAccount extends javax.swing.JFrame {
                             user.setEmail(email);
                             user.setType(false);
                             user.saveUser();
-
+                            
+                            //if valid the account is created in database 
                             JOptionPane.showMessageDialog(null, "Account Created. You will be returned to the Log In Page", "Account Created", JOptionPane.INFORMATION_MESSAGE);
                             LogIn frm = new LogIn();
                             this.setVisible(false);
                             frm.setVisible(true);
 
-                        }else{
+                        }else{ //error messages for validation
                          JOptionPane.showMessageDialog(null, "Account in use, ","", JOptionPane.INFORMATION_MESSAGE);
                         
                         }

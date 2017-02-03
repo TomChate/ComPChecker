@@ -146,7 +146,6 @@ public class LogIn extends javax.swing.JFrame {
         
         String username = txtboxusername.getText();
         String password = String.valueOf(passwordfield.getPassword());
-        System.out.println(password);
         //create new user account
         UserAccount user = new UserAccount();
         boolean successful = user.LogInService(username, password); //asks for username and password

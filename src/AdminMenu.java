@@ -212,6 +212,8 @@ public class AdminMenu extends javax.swing.JFrame {
         new AddCPU().setVisible(true);
         case "Motherboard": this.setVisible(false);
         new AddMotherboard().setVisible(true);
+        case "RAM": this.setVisible(false);
+        new addRAM().setVisible(true);
     
     
     

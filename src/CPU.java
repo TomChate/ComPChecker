@@ -23,26 +23,46 @@ public class CPU {
     int cores;
     boolean graphics;
 
+    /**
+     *
+     * @param make
+     */
     public void setMake(String make) {
 
         this.make = make;
     }
 
+    /**
+     *
+     * @param speed
+     */
     public void setSpeed(float speed) {
         this.speed = speed;
 
     }
 
+    /**
+     *
+     * @param cores
+     */
     public void setCores(int cores) {
         this.cores = cores;
 
     }
 
+    /**
+     *
+     * @param graphics
+     */
     public void setGraphics(boolean graphics) {
         this.graphics = graphics;
 
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean saveCPU() {
 
         Connection con = DatabaseConnection.establishConnection();

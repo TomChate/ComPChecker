@@ -210,6 +210,8 @@ public class AdminMenu extends javax.swing.JFrame {
         case "Accessory": break;
         case "CPU": this.setVisible(false);
         new AddCPU().setVisible(true);
+        case "Motherboard": this.setVisible(false);
+        new AddMotherboard().setVisible(true);
     
     
     

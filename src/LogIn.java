@@ -143,34 +143,35 @@ public class LogIn extends javax.swing.JFrame {
 
     private void btnLogOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOnActionPerformed
         // TODO add your handling code here:
+        
         String username = txtboxusername.getText();
         String password = String.valueOf(passwordfield.getPassword());
         System.out.println(password);
-
+        //create new user account
         UserAccount user = new UserAccount();
-        boolean successful = user.LogInService(username, password);
-        if (successful) {
-            boolean type = user.getType();
+        boolean successful = user.LogInService(username, password); //asks for username and password
+        if (successful) { 
+            boolean type = user.getType(); // if details are correct returns type of user
             if(type){
-            AdminMenu frm = new AdminMenu(user);
+            AdminMenu frm = new AdminMenu(user); //opens admin user form
             this.setVisible(false);
             
             frm.setVisible(true);
             }else{
-            user_menu frm = new user_menu(user);
+            user_menu frm = new user_menu(user); //opens general user form
             this.setVisible(false);
             frm.setVisible(true);
             
             
             }
-        } else {
+        } else { //error message prompted
             JOptionPane.showMessageDialog(null, "User account can not be found. Please try again or create a new account", "No Account Found", JOptionPane.INFORMATION_MESSAGE);
         }
 
     }//GEN-LAST:event_btnLogOnActionPerformed
 
     private void labelCreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccountMouseClicked
-        // TODO add your handling code here:
+        // displays new account form:
         CreateAccount frm = new CreateAccount();
         this.setVisible(false);
         frm.setVisible(true);
@@ -179,7 +180,7 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_labelCreateAccountMouseClicked
   
     private void lblChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePasswordMouseClicked
-        // TODO add your handling code here:
+        // displays change password form:
         ChangePassword frm = new ChangePassword();
         this.setVisible(false);
         frm.setVisible(true);

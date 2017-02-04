@@ -1,3 +1,4 @@
+
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 
@@ -6,12 +7,12 @@ import javax.swing.JScrollPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Luke
  */
 public class EditBuild extends javax.swing.JFrame {
+
     String myPart = "";
 
     /**
@@ -20,7 +21,7 @@ public class EditBuild extends javax.swing.JFrame {
     public EditBuild() {
         initComponents();
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
-        
+
         //When a user selects a build, the button text will change to the names 
         //of the different components. The user can then click on these buttons to 
         //change the components from a menu. The user can then click one of the 
@@ -36,6 +37,8 @@ public class EditBuild extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         lblLogo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstBuilds = new javax.swing.JList<>();
@@ -50,6 +53,19 @@ public class EditBuild extends javax.swing.JFrame {
         btnAccessories = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnConfirm = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -204,17 +220,19 @@ public class EditBuild extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public String getPart() {
-        System.out.println (myPart);
+        System.out.println(myPart);
         return myPart;
-}
-    
+    }
+
     private void btnRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRAMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRAMActionPerformed
 
     private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
         myPart = "CPU";
-        
+        this.setVisible(false);
+        new SelectComponent(myPart).setVisible(true);
+
     }//GEN-LAST:event_btnProcessorActionPerformed
 
     private void btnMotherboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherboardActionPerformed
@@ -260,7 +278,7 @@ public class EditBuild extends javax.swing.JFrame {
         btnCooling.setVisible(false);
         btnAccessories.setVisible(false);
     }
-    
+
     //Could maybe save repetition here by creating a toggle/passing a variable?
     private void showButtons() {
         btnProcessor.setVisible(true);
@@ -273,7 +291,7 @@ public class EditBuild extends javax.swing.JFrame {
         btnCooling.setVisible(true);
         btnAccessories.setVisible(true);
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -322,6 +340,8 @@ public class EditBuild extends javax.swing.JFrame {
     private javax.swing.JButton btnRAM;
     private javax.swing.JButton btnStorage;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JList<String> lstBuilds;
     // End of variables declaration//GEN-END:variables

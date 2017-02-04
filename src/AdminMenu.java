@@ -182,7 +182,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void btnCreateBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBuildActionPerformed
         this.setVisible(false);
-        //new CreateBuild().setVisible(true);
+        new EditBuild().setVisible(true);
     }//GEN-LAST:event_btnCreateBuildActionPerformed
 
     private void btnCreateAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccActionPerformed

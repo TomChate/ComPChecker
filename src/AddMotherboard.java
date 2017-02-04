@@ -227,7 +227,7 @@ public class AddMotherboard extends javax.swing.JDialog {
         String size = cmboxFormFactor.getSelectedItem().toString();
         int slots = Integer.parseInt(txtboxSlots.getText());
         int maxRAM = Integer.parseInt(txtboxmaxRAM.getText());
-        if(make.isEmpty() || model.isEmpty() || price.isEmpty()  || socket.isEmpty() || size.isEmpty() || slots.isEmpty() || maxRAM.isEmpty()){
+      
         motherboard.setMake(make);
         motherboard.setModel(model);
         motherboard.setPrice(price);
@@ -237,7 +237,7 @@ public class AddMotherboard extends javax.swing.JDialog {
         motherboard.setMaxRAM(maxRAM);
         
         motherboard.saveMotherboard();
-        }
+        
 
     }//GEN-LAST:event_btnSaveActionPerformed
 

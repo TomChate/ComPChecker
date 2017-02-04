@@ -88,7 +88,7 @@ public class Motherboard {
         Connection con = DatabaseConnection.establishConnection();
 
         try {
-
+//Inserts data into part table.
             String query = "INSERT INTO Part  (Price,Model,Make,PartType) VALUES (?,?,?,?)";
 
             PreparedStatement statement = con.prepareStatement(query);
@@ -99,9 +99,8 @@ public class Motherboard {
             statement.setString(4, "Motherboard");
             statement.execute();
             String model = this.model;
-            
+            //Gets ID of inserted Item.
             query = "SELECT * FROM Part WHERE Model ='" + model + "' && PartType = 'Motherboard'";
-            System.out.println("first query");
             statement.executeQuery(query);
 
             ResultSet rs = statement.getResultSet();
@@ -109,7 +108,7 @@ public class Motherboard {
             while (rs.next()) {
                 partID = rs.getInt("PartID");
             }
-
+//Inserts data in Motherboard table.
             query = "INSERT INTO Motherboard values (?,?,?,?,?)";
              statement = con.prepareStatement(query);
             statement.setInt(1, partID);
@@ -118,6 +117,7 @@ public class Motherboard {
             statement.setInt(4, ramSlots);
             statement.setInt(5, maxRAM);
             statement.execute();
+            con.close();
             return true;
         } catch (SQLException err) {
             System.out.println(err.getMessage());   //Prints out SQL error 

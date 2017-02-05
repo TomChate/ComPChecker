@@ -20,6 +20,7 @@ public class EditBuild extends javax.swing.JFrame {
      */
     public EditBuild() {
         initComponents();
+        this.setTitle("Edit Build");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
 
         //When a user selects a build, the button text will change to the names 

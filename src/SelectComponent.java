@@ -34,6 +34,8 @@ public class SelectComponent extends javax.swing.JDialog {
     public SelectComponent(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setTitle("Select Component");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
     /**

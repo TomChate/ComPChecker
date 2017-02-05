@@ -15,7 +15,7 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
-        //setSize(800,400);   //Sets the dimensions of the frame
+        this.setTitle("Main Menu");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 

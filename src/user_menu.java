@@ -16,6 +16,8 @@ public class user_menu extends javax.swing.JFrame {
     UserAccount currentUser;
     public user_menu(UserAccount user) {
         initComponents();
+        this.setTitle("User Menu");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         currentUser = user;
     }
     public user_menu() {

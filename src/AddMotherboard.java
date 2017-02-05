@@ -22,6 +22,8 @@ public class AddMotherboard extends javax.swing.JDialog {
     public AddMotherboard(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setTitle("Add Motherboard");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         populateComboBoxes();
     }
 

@@ -35,14 +35,12 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel4" pref="140" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnSave" max="32767" attributes="0"/>
-                      <Component id="cmboxMake" max="32767" attributes="0"/>
-                      <Component id="txtboxModel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtboxPrice" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtboxCores" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtboxSpeed" alignment="0" pref="140" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="btnSave" max="32767" attributes="0"/>
+                  <Component id="cmboxMake" max="32767" attributes="0"/>
+                  <Component id="txtboxModel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtboxPrice" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtboxCores" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtboxSpeed" alignment="0" pref="140" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="110" max="32767" attributes="0"/>
           </Group>

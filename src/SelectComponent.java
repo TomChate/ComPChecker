@@ -1,4 +1,9 @@
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -8,7 +13,6 @@ import javax.swing.table.TableColumn;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Tom
@@ -22,26 +26,84 @@ public class SelectComponent extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-      public SelectComponent(String type) {
-          
-        initComponents();
-        TableColumn col = new TableColumn(jTable.getColumnCount());
-        String head = "Make";   //sets make column
-        col.setHeaderValue(head);
-        jTable.addColumn(col);
-         head = "Model";     //sets make model
-         col.setHeaderValue(head);
-          jTable.addColumn(col);
-          
-          
-          if(type =="CPU"){
-          
-          
-          
-          
-          }
-    }
 
+    public SelectComponent(String type) {
+
+        initComponents();
+        TableColumn col = new TableColumn();
+        ArrayList<String> columns = new ArrayList<>();
+        columns.add("Make");
+        columns.add("Model");
+        columns.add("Price");
+        if (type == "CPU") {
+            columns.add("Speed");
+            columns.add("Cores");
+            columns.add("Graphics");
+        } else if (type == "Motherboard") {
+            columns.add("Socket");
+            columns.add("Form Factor");
+            columns.add("RAM Slots");
+            columns.add("Max RAM");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) jTable.getModel();
+        TableColumn col1 = new TableColumn(model.getColumnCount());
+        for (String temp : columns) { //Adds columns to table.
+            col.setHeaderValue(temp);
+            jTable.addColumn(col);
+            model.addColumn(temp);
+
+        }
+        Connection con = DatabaseConnection.establishConnection();
+        try {
+            Statement stmt = (Statement) con.createStatement();
+            String query;
+            String make;
+            String mdl;
+            double price;
+            if (type == "CPU") {
+                query = ("Select P.PartID, P.Make, P.Model, P.Price, Speed, Cores, Graphics FROM CPU JOIN Part AS P on CPU.ID=P.PartID");
+
+                stmt.executeQuery(query);
+                ResultSet rs = stmt.getResultSet();
+
+                while (rs.next()) {
+                    make = rs.getString("Make");
+                    mdl = rs.getString("Model");
+                    price = rs.getDouble("Price");
+                    double speed = rs.getDouble("Speed");
+                    int cores = rs.getInt("Cores");
+                    boolean graphics = rs.getBoolean("Graphics");
+
+                    model.addRow(new Object[]{make, mdl, price, speed, cores, graphics});
+
+                }
+            } else if (type == "Motherboard") {
+                  query = ("Select P.PartID, P.Make, P.Model, P.Price, Socket, Form_Factor, RAM_Slots,MAX_RAM FROM Motherboard JOIN Part AS P on Motherboard.ID=P.PartID");
+                
+                stmt.executeQuery(query);
+                ResultSet rs = stmt.getResultSet();
+                  while (rs.next()) {
+                    make = rs.getString("Make");
+                    mdl = rs.getString("Model");
+                    price = rs.getDouble("Price");
+                    String socket = rs.getString("Socket");
+                    String size = rs.getString("Form_Factor");
+                    int slots = rs.getInt("RAM_Slots");
+                    int maxRAM = rs.getInt("MAX_RAM");
+                    
+
+                    model.addRow(new Object[]{make, mdl, price, socket,size,slots,maxRAM});
+
+                }
+
+            }
+
+        } catch (SQLException err) {
+            System.out.println(err.getMessage());   //Prints out SQL error 
+        }
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,14 +119,6 @@ public class SelectComponent extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
         jScrollPane1.setViewportView(jTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -72,8 +126,8 @@ public class SelectComponent extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(

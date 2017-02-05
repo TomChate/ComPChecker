@@ -170,6 +170,9 @@ public class AddCPU extends javax.swing.JDialog {
         cpu.speed = speed;
         cpu.cores = cores;
         cpu.price = price;
+        
+         cpu.saveCPU();
+         
 
 
     }//GEN-LAST:event_btnSaveActionPerformed

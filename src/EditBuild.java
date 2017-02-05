@@ -237,6 +237,10 @@ public class EditBuild extends javax.swing.JFrame {
 
     private void btnMotherboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherboardActionPerformed
         // TODO add your handling code here:
+           myPart = "Motherboard";
+        this.setVisible(false);
+        new SelectComponent(myPart).setVisible(true);
+
     }//GEN-LAST:event_btnMotherboardActionPerformed
 
     private void btnGraphicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraphicsActionPerformed

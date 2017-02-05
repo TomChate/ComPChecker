@@ -22,11 +22,24 @@ public class SelectComponent extends javax.swing.JDialog {
     /**
      * Creates new form SelectComponent
      */
+    
+    int cpuID;
+    int motherboardID;
+
+    /**
+     *
+     * @param parent
+     * @param modal
+     */
     public SelectComponent(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
 
+    /**
+     *
+     * @param type
+     */
     public SelectComponent(String type) {
 
         initComponents();
@@ -83,6 +96,7 @@ public class SelectComponent extends javax.swing.JDialog {
                 
                 stmt.executeQuery(query);
                 ResultSet rs = stmt.getResultSet();
+                
                   while (rs.next()) {
                     make = rs.getString("Make");
                     mdl = rs.getString("Model");
@@ -105,6 +119,7 @@ public class SelectComponent extends javax.swing.JDialog {
 
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,6 +134,11 @@ public class SelectComponent extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,6 +159,10 @@ public class SelectComponent extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableMouseClicked
 
     /**
      * @param args the command line arguments

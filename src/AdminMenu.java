@@ -20,12 +20,10 @@ public class AdminMenu extends javax.swing.JFrame {
     UserAccount currentUser;
     public AdminMenu() {
         initComponents();
-        this.setTitle("Admin Menu");     //Adds a title to the frame
-        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
  public AdminMenu(UserAccount user) {
         initComponents();
-        //setSize(600,400);   //Sets the dimensions of the frame
+        this.setTitle("Admin Menu");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         currentUser = user;
     }

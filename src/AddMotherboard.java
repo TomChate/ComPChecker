@@ -31,6 +31,8 @@ public class AddMotherboard extends javax.swing.JDialog {
 
         initComponents();
         populateComboBoxes();
+        this.setTitle("Add CPU");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
     /**

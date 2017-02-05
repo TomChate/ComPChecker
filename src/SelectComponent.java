@@ -45,6 +45,8 @@ public class SelectComponent extends javax.swing.JDialog {
     public SelectComponent(String type) {
 
         initComponents();
+        this.setTitle("Select Component");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         TableColumn col = new TableColumn();
         ArrayList<String> columns = new ArrayList<>();
         columns.add("Make");

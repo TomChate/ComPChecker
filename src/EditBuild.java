@@ -269,31 +269,6 @@ public class EditBuild extends javax.swing.JFrame {
         getPart();
     }//GEN-LAST:event_btnConfirmActionPerformed
 
-    private void hideButtons() {
-        btnProcessor.setVisible(false);
-        btnMotherboard.setVisible(false);
-        btnRAM.setVisible(false);
-        btnGraphics.setVisible(false);
-        btnStorage.setVisible(false);
-        btnCase.setVisible(false);
-        btnPowerSup.setVisible(false);
-        btnCooling.setVisible(false);
-        btnAccessories.setVisible(false);
-    }
-
-    //Could maybe save repetition here by creating a toggle/passing a variable?
-    private void showButtons() {
-        btnProcessor.setVisible(true);
-        btnMotherboard.setVisible(true);
-        btnRAM.setVisible(true);
-        btnGraphics.setVisible(true);
-        btnStorage.setVisible(true);
-        btnCase.setVisible(true);
-        btnPowerSup.setVisible(true);
-        btnCooling.setVisible(true);
-        btnAccessories.setVisible(true);
-    }
-
     /**
      * @param args the command line arguments
      */

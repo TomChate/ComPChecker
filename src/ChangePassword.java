@@ -17,6 +17,7 @@ public class ChangePassword extends javax.swing.JDialog {
      * Creates new form ChangePassword
      */
     UserAccount currentUser;
+   
 
     public ChangePassword(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -28,10 +29,14 @@ public class ChangePassword extends javax.swing.JDialog {
     public ChangePassword(UserAccount user) {
         initComponents();
         currentUser = user;
+        this.setTitle("Change Password");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
     // constructor set to reference login
     public ChangePassword(){
-     initComponents();
+        initComponents();
+        this.setTitle("Change Password");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
     /**

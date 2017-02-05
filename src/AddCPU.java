@@ -17,6 +17,8 @@ public class AddCPU extends javax.swing.JDialog {
 
     /**
      * Creates new form AddCPU
+     * @param parent
+     * @param modal
      */
     public AddCPU(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -224,6 +226,7 @@ public class AddCPU extends javax.swing.JDialog {
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 AddCPU dialog = new AddCPU(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {

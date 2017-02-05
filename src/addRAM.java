@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author User
  */
-public class addRAM extends javax.swing.JFrame {
+public class addRAM extends javax.swing.JDialog {
 
     
     public addRAM(java.awt.Frame parent, boolean modal) {

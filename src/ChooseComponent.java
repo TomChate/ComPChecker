@@ -25,6 +25,7 @@ public class ChooseComponent extends javax.swing.JFrame {
     public ChooseComponent() throws ClassNotFoundException, NoSuchMethodException, 
             InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         //initComponents();
         
         //Connection con = DatabaseConnection.establishConnection();

@@ -230,15 +230,12 @@ public class EditBuild extends javax.swing.JFrame {
 
     private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
         myPart = "CPU";
-        this.setVisible(false);
         new SelectComponent(myPart).setVisible(true);
 
     }//GEN-LAST:event_btnProcessorActionPerformed
 
     private void btnMotherboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherboardActionPerformed
-        // TODO add your handling code here:
-           myPart = "Motherboard";
-        this.setVisible(false);
+        myPart = "Motherboard";
         new SelectComponent(myPart).setVisible(true);
 
     }//GEN-LAST:event_btnMotherboardActionPerformed

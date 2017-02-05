@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -22,7 +21,6 @@ public class SelectComponent extends javax.swing.JDialog {
     /**
      * Creates new form SelectComponent
      */
-    
     int cpuID;
     int motherboardID;
 
@@ -96,12 +94,12 @@ public class SelectComponent extends javax.swing.JDialog {
 
                 }
             } else if (type == "Motherboard") {
-                  query = ("Select P.PartID, P.Make, P.Model, P.Price, Socket, Form_Factor, RAM_Slots,MAX_RAM FROM Motherboard JOIN Part AS P on Motherboard.ID=P.PartID");
-                
+                query = ("Select P.PartID, P.Make, P.Model, P.Price, Socket, Form_Factor, RAM_Slots,MAX_RAM FROM Motherboard JOIN Part AS P on Motherboard.ID=P.PartID");
+
                 stmt.executeQuery(query);
                 ResultSet rs = stmt.getResultSet();
-                
-                  while (rs.next()) {
+
+                while (rs.next()) {
                     make = rs.getString("Make");
                     mdl = rs.getString("Model");
                     price = rs.getDouble("Price");
@@ -109,21 +107,14 @@ public class SelectComponent extends javax.swing.JDialog {
                     String size = rs.getString("Form_Factor");
                     int slots = rs.getInt("RAM_Slots");
                     int maxRAM = rs.getInt("MAX_RAM");
-                    
 
-                    model.addRow(new Object[]{make, mdl, price, socket,size,slots,maxRAM});
-
+                    model.addRow(new Object[]{make, mdl, price, socket, size, slots, maxRAM});
                 }
-
             }
-
         } catch (SQLException err) {
             System.out.println(err.getMessage());   //Prints out SQL error 
         }
-
     }
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -197,6 +188,7 @@ public class SelectComponent extends javax.swing.JDialog {
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 SelectComponent dialog = new SelectComponent(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {

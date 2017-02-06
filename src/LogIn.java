@@ -39,7 +39,7 @@ public class LogIn extends javax.swing.JFrame {
         labelCreateAccount = new javax.swing.JLabel();
         lblChangePassword = new javax.swing.JLabel();
         passwordfield = new javax.swing.JPasswordField();
-        logo = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         jTextPane2.setText("Username:");
         jScrollPane2.setViewportView(jTextPane2);
@@ -84,8 +84,13 @@ public class LogIn extends javax.swing.JFrame {
                 passwordfieldActionPerformed(evt);
             }
         });
+        passwordfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordfieldKeyPressed(evt);
+            }
+        });
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,37 +98,34 @@ public class LogIn extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelCreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
+                        .addGap(271, 271, 271)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(185, 185, 185)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblUsername)
+                                    .addComponent(lblPassword))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnLogOn)
+                                    .addComponent(txtboxusername)
+                                    .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lblUsername)
-                                            .addComponent(lblPassword))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(btnLogOn)
-                                            .addComponent(txtboxusername)
-                                            .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(55, 55, 55)
-                                        .addComponent(lblChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 57, Short.MAX_VALUE)))
-                .addContainerGap())
+                                    .addComponent(labelCreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(lblLogo)))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblUsername)
                     .addComponent(txtboxusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -135,41 +137,43 @@ public class LogIn extends javax.swing.JFrame {
                 .addComponent(btnLogOn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblChangePassword)
-                .addGap(57, 57, 57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelCreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(62, 62, 62))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOnActionPerformed
-        // TODO add your handling code here:
-        
+        login();
+    }//GEN-LAST:event_btnLogOnActionPerformed
+
+    private void login() {
+
         String username = txtboxusername.getText();
         String password = String.valueOf(passwordfield.getPassword());
         //create new user account
         UserAccount user = new UserAccount();
         boolean successful = user.LogInService(username, password); //asks for username and password
-        if (successful) { 
+        if (successful) {
             boolean type = user.getType(); // if details are correct returns type of user
-            if(type){
-            AdminMenu frm = new AdminMenu(user); //opens admin user form
-            this.setVisible(false);
-            
-            frm.setVisible(true);
-            }else{
-            user_menu frm = new user_menu(user); //opens general user form
-            this.setVisible(false);
-            frm.setVisible(true);
-            
-            
+            if (type) {
+                AdminMenu frm = new AdminMenu(user); //opens admin user form
+                this.setVisible(false);
+
+                frm.setVisible(true);
+            } else {
+                user_menu frm = new user_menu(user); //opens general user form
+                this.setVisible(false);
+                frm.setVisible(true);
+
             }
         } else { //error message prompted
             JOptionPane.showMessageDialog(null, "User account can not be found. Please try again or create a new account", "No Account Found", JOptionPane.INFORMATION_MESSAGE);
         }
 
-    }//GEN-LAST:event_btnLogOnActionPerformed
+    }
 
     private void labelCreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelCreateAccountMouseClicked
         // displays new account form:
@@ -179,7 +183,7 @@ public class LogIn extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_labelCreateAccountMouseClicked
-  
+
     private void lblChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePasswordMouseClicked
         // displays change password form:
         ChangePassword frm = new ChangePassword();
@@ -191,7 +195,12 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordfieldActionPerformed
 
-    
+    private void passwordfieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordfieldKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            login();
+        }
+    }//GEN-LAST:event_passwordfieldKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -233,9 +242,9 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JLabel labelCreateAccount;
     private javax.swing.JLabel lblChangePassword;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JLabel logo;
     private javax.swing.JPasswordField passwordfield;
     private javax.swing.JTextField txtboxusername;
     // End of variables declaration//GEN-END:variables

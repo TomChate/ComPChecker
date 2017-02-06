@@ -22,7 +22,6 @@ public class SelectComponent extends javax.swing.JDialog {
     /**
      * Creates new form SelectComponent
      */
-    
     int cpuID;
     int motherboardID;
 
@@ -96,12 +95,12 @@ public class SelectComponent extends javax.swing.JDialog {
 
                 }
             } else if (type == "Motherboard") {
-                  query = ("Select P.PartID, P.Make, P.Model, P.Price, Socket, Form_Factor, RAM_Slots,MAX_RAM FROM Motherboard JOIN Part AS P on Motherboard.ID=P.PartID");
-                
+                query = ("Select P.PartID, P.Make, P.Model, P.Price, Socket, Form_Factor, RAM_Slots,MAX_RAM FROM Motherboard JOIN Part AS P on Motherboard.ID=P.PartID");
+
                 stmt.executeQuery(query);
                 ResultSet rs = stmt.getResultSet();
-                
-                  while (rs.next()) {
+
+                while (rs.next()) {
                     make = rs.getString("Make");
                     mdl = rs.getString("Model");
                     price = rs.getDouble("Price");
@@ -109,9 +108,8 @@ public class SelectComponent extends javax.swing.JDialog {
                     String size = rs.getString("Form_Factor");
                     int slots = rs.getInt("RAM_Slots");
                     int maxRAM = rs.getInt("MAX_RAM");
-                    
 
-                    model.addRow(new Object[]{make, mdl, price, socket,size,slots,maxRAM});
+                    model.addRow(new Object[]{make, mdl, price, socket, size, slots, maxRAM});
 
                 }
 
@@ -122,7 +120,6 @@ public class SelectComponent extends javax.swing.JDialog {
         }
 
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -151,13 +148,13 @@ public class SelectComponent extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 25, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -197,6 +194,7 @@ public class SelectComponent extends javax.swing.JDialog {
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 SelectComponent dialog = new SelectComponent(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {

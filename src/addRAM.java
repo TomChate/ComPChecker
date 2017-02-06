@@ -36,6 +36,13 @@ public class addRAM extends javax.swing.JDialog {
         populateMakes();
     }
 
+    addRAM(UserAccount currentUser) {
+        initComponents();
+        this.setTitle("Add RAM");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+        populateMakes();
+    }
+
    
 
     /**

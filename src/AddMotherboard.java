@@ -35,6 +35,13 @@ public class AddMotherboard extends javax.swing.JDialog {
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
+    AddMotherboard(UserAccount currentUser) {
+        initComponents();
+        populateComboBoxes();
+        this.setTitle("Add CPU");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

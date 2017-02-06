@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Luke
@@ -17,16 +16,21 @@ public class AdminMenu extends javax.swing.JFrame {
     /**
      * Creates new form AdminMenu
      */
-    UserAccount currentUser;
+    UserAccount currentUser;    //Now from the menu, this user var can be passed to other forms
+                                //If it needs to be accessed in another form not in the method passed to...
+                                //... then just assign it to a new var again like this (better way to do this?)
+
     public AdminMenu() {
         initComponents();
     }
- public AdminMenu(UserAccount user) {
+
+    public AdminMenu(UserAccount user) {
         initComponents();
         this.setTitle("Admin Menu");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
-        currentUser = user;
+        currentUser = user;     //Assigns the user variable passed to this method to a new var
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -190,42 +194,40 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void btnAddMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMakeActionPerformed
         // TODO add your handling code here:
-         this.setVisible(false);
+        this.setVisible(false);
         new AddMake().setVisible(true);
     }//GEN-LAST:event_btnAddMakeActionPerformed
 
     private void btnNewComponentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewComponentActionPerformed
         // TODO add your handling code here:
-      String[] choices = { "Accessory", "CPU", "Cooler", "GPU", "Make", "Motherboard" ,"Case","PSU", "RAM", "Storage"};
-    String input = (String) JOptionPane.showInputDialog(null, "Which type of part is being added?",
-        "New Part", JOptionPane.QUESTION_MESSAGE, null, // Use
-                                                                        // default
-                                                                        // icon
-        choices, // Array of choices
-        choices[0]); // Initial choice
-    switch(input){
-    
-        case "Accessory": break;
-        
-        case "CPU": this.setVisible(false);
-        new AddCPU().setVisible(true);
-        break;
-        
-        case "Motherboard": this.setVisible(false);
-        new AddMotherboard().setVisible(true);
-        break;
-        
-        case "RAM": this.setVisible(false);
-        new addRAM().setVisible(true);
-        break;
-    
-    
-    
-    
-    
-    
-    
-    }
+        String[] choices = {"Accessory", "CPU", "Cooler", "GPU", "Make", "Motherboard", "Case", "PSU", "RAM", "Storage"};
+        String input = (String) JOptionPane.showInputDialog(null, "Which type of part is being added?",
+                "New Part", JOptionPane.QUESTION_MESSAGE, null, // Use
+                // default
+                // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+        switch (input) {
+
+            case "Accessory":
+                break;
+
+            case "CPU":
+                this.setVisible(false);
+                new AddCPU(currentUser).setVisible(true);
+                break;
+
+            case "Motherboard":
+                this.setVisible(false);
+                new AddMotherboard(currentUser).setVisible(true);
+                break;
+
+            case "RAM":
+                this.setVisible(false);
+                new addRAM(currentUser).setVisible(true);
+                break;
+
+        }
     }//GEN-LAST:event_btnNewComponentActionPerformed
 
     /**

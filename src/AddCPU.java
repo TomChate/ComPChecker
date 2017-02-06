@@ -36,6 +36,14 @@ public class AddCPU extends javax.swing.JDialog {
         populateMakes();
     }
 
+    AddCPU(UserAccount currentUser) {
+        initComponents();
+        this.setTitle("Add CPU");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+        populateMakes();
+        System.out.println(currentUser.getUsername());
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

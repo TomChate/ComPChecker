@@ -18,12 +18,13 @@ import javax.swing.JOptionPane;
 public class addRAM extends javax.swing.JDialog {
 
     
-    public addRAM(java.awt.Frame parent, boolean modal) {
+    public addRAM(java.awt.Frame parent, boolean modal, UserAccount user) {
         super(parent, modal);
         initComponents();
         this.setTitle("Add RAM");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         populateMakes();
+        System.out.println(user);
     }
     /**
      * Creates new form addRAM

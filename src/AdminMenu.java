@@ -16,7 +16,9 @@ public class AdminMenu extends javax.swing.JFrame {
     /**
      * Creates new form AdminMenu
      */
-    UserAccount currentUser;
+    UserAccount currentUser;    //Now from the menu, this user var can be passed to other forms
+                                //If it needs to be accessed in another form not in the method passed to...
+                                //... then just assign it to a new var again like this (better way to do this?)
 
     public AdminMenu() {
         initComponents();
@@ -26,7 +28,7 @@ public class AdminMenu extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Admin Menu");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
-        currentUser = user;
+        currentUser = user;     //Assigns the user variable passed to this method to a new var
     }
 
     /**
@@ -212,7 +214,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
             case "CPU":
                 this.setVisible(false);
-                new AddCPU().setVisible(true);
+                new AddCPU(currentUser).setVisible(true);
                 break;
 
             case "Motherboard":

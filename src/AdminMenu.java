@@ -260,8 +260,31 @@ public class AdminMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewComponentActionPerformed
 
     private void btnEditBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditBuildActionPerformed
-        this.setVisible(false);
-        new CreateBuild().setVisible(true);
+        String[] choices = {"Build 1", "Build 2", "Build 3"};
+        //Need build names here to be pulled from DB
+        String input = (String) JOptionPane.showInputDialog(null, "Which build would you like to edit?",
+                "Edit Build", JOptionPane.QUESTION_MESSAGE, null, // Use
+                // default
+                // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+        switch (input) {
+
+            case "Build 1":
+                this.setVisible(false);
+                new EditBuild(currentUser, input).setVisible(true);
+                break;
+
+            case "Build 2":
+                this.setVisible(false);
+                new EditBuild(currentUser, input).setVisible(true);
+                break;
+
+            case "Build 3":
+                this.setVisible(false);
+                new EditBuild(currentUser, input).setVisible(true);
+                break;
+        }
     }//GEN-LAST:event_btnEditBuildActionPerformed
 
     private void btnEditAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAccActionPerformed

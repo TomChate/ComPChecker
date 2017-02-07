@@ -1,31 +1,30 @@
-
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  *
  * @author Luke
  */
-public class CreateBuild extends javax.swing.JFrame {
-
+public class EditBuild extends javax.swing.JFrame {
+    
     String myPart = "";
 
     /**
      * Creates new form EditBuild
      */
-    public CreateBuild() {
+    public EditBuild() {
         initComponents();
         this.setTitle("Edit Build");     //Adds a title to the frame
-        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
-        CreateBuild.infoBox("Click a button to edit that component. When finished, either confirm "
-                + "your choices or click the cancel button.", "Create Build Tip");
-        //Is there a way for this to pop-up after the form has loaded?
+        setLocationRelativeTo(null);
+    }
+
+    EditBuild(UserAccount currentUser, String Build) {
+        initComponents();
+        this.setTitle("Edit Build");     //Adds a title to the frame
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,39 +36,33 @@ public class CreateBuild extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        lblLogo = new javax.swing.JLabel();
+        btnCancel = new javax.swing.JButton();
+        btnConfirm = new javax.swing.JButton();
         btnProcessor = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         btnRAM = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         btnMotherboard = new javax.swing.JButton();
         btnGraphics = new javax.swing.JButton();
         btnStorage = new javax.swing.JButton();
         btnCase = new javax.swing.JButton();
         btnPowerSup = new javax.swing.JButton();
         btnCooling = new javax.swing.JButton();
+        lblLogo = new javax.swing.JLabel();
         btnAccessories = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
-        btnConfirm = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+        btnCancel.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancel.setText("✘");
+
+        btnConfirm.setBackground(new java.awt.Color(0, 255, 0));
+        btnConfirm.setText("✔");
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
 
         btnProcessor.setText("Processor");
         btnProcessor.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +70,9 @@ public class CreateBuild extends javax.swing.JFrame {
                 btnProcessorActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Lato", 0, 13)); // NOI18N
+        jLabel1.setText("Build Name:");
 
         btnRAM.setText("RAM");
         btnRAM.addActionListener(new java.awt.event.ActionListener() {
@@ -127,26 +123,14 @@ public class CreateBuild extends javax.swing.JFrame {
             }
         });
 
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+
         btnAccessories.setText("Accessories");
         btnAccessories.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAccessoriesActionPerformed(evt);
             }
         });
-
-        btnCancel.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancel.setText("✘");
-
-        btnConfirm.setBackground(new java.awt.Color(0, 255, 0));
-        btnConfirm.setText("✔");
-        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfirmActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Lato", 0, 13)); // NOI18N
-        jLabel1.setText("Build Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,36 +196,33 @@ public class CreateBuild extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    public static void infoBox(String infoMessage, String titleBar) {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
-
     public String getPart() {
         System.out.println(myPart);
         return myPart;
     }
+    
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        getPart();
+    }//GEN-LAST:event_btnConfirmActionPerformed
+
+    private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
+        myPart = "CPU";
+        new SelectComponent(myPart).setVisible(true);
+    }//GEN-LAST:event_btnProcessorActionPerformed
 
     private void btnRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRAMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRAMActionPerformed
 
-    private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
-        myPart = "CPU";
-        new SelectComponent(myPart).setVisible(true);
-
-    }//GEN-LAST:event_btnProcessorActionPerformed
-
     private void btnMotherboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherboardActionPerformed
         myPart = "Motherboard";
         new SelectComponent(myPart).setVisible(true);
-
     }//GEN-LAST:event_btnMotherboardActionPerformed
 
     private void btnGraphicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraphicsActionPerformed
@@ -268,10 +249,6 @@ public class CreateBuild extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccessoriesActionPerformed
 
-    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
-        getPart();
-    }//GEN-LAST:event_btnConfirmActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -289,21 +266,20 @@ public class CreateBuild extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateBuild().setVisible(true);
+                new EditBuild().setVisible(true);
             }
         });
     }
@@ -321,8 +297,6 @@ public class CreateBuild extends javax.swing.JFrame {
     private javax.swing.JButton btnRAM;
     private javax.swing.JButton btnStorage;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables

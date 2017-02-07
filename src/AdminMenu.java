@@ -208,12 +208,12 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void btnViewBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBuildActionPerformed
         this.setVisible(false);
-        new EditBuild().setVisible(true);
+        new CreateBuild().setVisible(true);
     }//GEN-LAST:event_btnViewBuildActionPerformed
 
     private void btnCreateBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBuildActionPerformed
         this.setVisible(false);
-        new EditBuild().setVisible(true);
+        new CreateBuild().setVisible(true);
     }//GEN-LAST:event_btnCreateBuildActionPerformed
 
     private void btnCreateAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccActionPerformed
@@ -260,7 +260,8 @@ public class AdminMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewComponentActionPerformed
 
     private void btnEditBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditBuildActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new CreateBuild().setVisible(true);
     }//GEN-LAST:event_btnEditBuildActionPerformed
 
     private void btnEditAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAccActionPerformed

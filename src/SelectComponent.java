@@ -195,12 +195,22 @@ public class SelectComponent extends javax.swing.JDialog {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public String getDetails() {
+        int column1 = 0;
+        int column2 = 1;
+        int row = jTable.getSelectedRow();
+        String value1 = jTable.getModel().getValueAt(row, column1).toString();
+        String value2 = jTable.getModel().getValueAt(row, column2).toString();
+        return value1+" "+value2;   //returns make and brand to be stored in button text
+    } 
+    
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTableMouseClicked
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         //temp save part, change button label to part text
+        System.out.println(getDetails());
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

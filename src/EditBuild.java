@@ -55,6 +55,11 @@ public class EditBuild extends javax.swing.JFrame {
 
         btnCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnCancel.setText("✘");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         btnConfirm.setBackground(new java.awt.Color(0, 255, 0));
         btnConfirm.setText("✔");
@@ -248,6 +253,11 @@ public class EditBuild extends javax.swing.JFrame {
     private void btnAccessoriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccessoriesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccessoriesActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        this.setVisible(false);
+        new AdminMenu().setVisible(true);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments

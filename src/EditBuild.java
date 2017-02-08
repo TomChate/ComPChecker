@@ -9,12 +9,14 @@
  * @author Luke
  */
 public class EditBuild extends javax.swing.JFrame {
-    
+
     String myPart = "";
 
     /**
      * Creates new form EditBuild
      */
+    Build build = new Build();
+
     public EditBuild() {
         initComponents();
         this.setTitle("Edit Build");     //Adds a title to the frame
@@ -211,14 +213,19 @@ public class EditBuild extends javax.swing.JFrame {
         System.out.println(myPart);
         return myPart;
     }
-    
+
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         getPart();
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessorActionPerformed
         myPart = "CPU";
-        new SelectComponent(myPart).setVisible(true);
+        SelectComponent frm = new SelectComponent(myPart); //
+        this.setVisible(false);
+        frm.setVisible(true);
+        
+
+
     }//GEN-LAST:event_btnProcessorActionPerformed
 
     private void btnRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRAMActionPerformed

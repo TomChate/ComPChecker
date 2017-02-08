@@ -195,7 +195,7 @@ public class SelectComponent extends javax.swing.JDialog {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public String getDetails() {
+    public int getID() {
         int column1 = 0;
         int column2 = 1;
         int partID = 0;
@@ -212,11 +212,12 @@ public class SelectComponent extends javax.swing.JDialog {
             while (rs.next()) {
                 partID = rs.getInt("PartID");
             }
-            System.out.println(partID);   //Prints out SQL error 
+            return partID;
         } catch (SQLException err) {
             System.out.println(err.getMessage());   //Prints out SQL error 
+           
         }
-        return make + " " + model;   //returns make and brand to be stored in button text
+        return 0;
     }
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
@@ -225,9 +226,10 @@ public class SelectComponent extends javax.swing.JDialog {
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         //temp save part, change button label to part text
-        System.out.println(getDetails());
+        int ID = getID();
+        
         this.setVisible(false);
-
+        
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

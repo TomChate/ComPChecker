@@ -8,23 +8,56 @@
  *
  * @author Greg
  */
+import javax.swing.JOptionPane;
+
 public class user_menu extends javax.swing.JFrame {
 
     /**
      * Creates new form user_menu
      */
     UserAccount currentUser;
+    
+    public user_menu(UserAccount user, boolean adim) {
+        initComponents();
+        this.setTitle("Admin Menu");     //Adds a title to the frame
+        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+        currentUser = user;
+        MenuPanel.setVisible(false);
+        adminMenu.setVisible(true);
+        ProfilePanel.setVisible(false);
+    }
     public user_menu(UserAccount user) {
         initComponents();
         this.setTitle("User Menu");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
         currentUser = user;
+        builds.setText(currentUser.getBuilds());
     }
     public user_menu() {
         this.setTitle("User Menu");     //Adds a title to the frame
         setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
     }
 
+    
+    private void viewProfile(){
+    MenuPanel.setVisible(false);
+        adminMenu.setVisible(false);
+        ProfilePanel.setVisible(true);
+
+        fname.setText(currentUser.getFname());
+        sname.setText(currentUser.getSname());
+
+        email.setText(currentUser.getEmail());
+
+  
+    }
+    
+    
+    
+    private void getBuilds(){
+    currentUser.getBuilds();
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,22 +68,50 @@ public class user_menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lableMenu = new javax.swing.JLabel();
-        lable = new javax.swing.JLabel();
-        Build1 = new javax.swing.JButton();
-        logOffButton = new javax.swing.JButton();
-        SettingButton = new javax.swing.JButton();
+        profileBtn = new javax.swing.JButton();
+        logOffBtn = new javax.swing.JButton();
+        MenuPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        builds = new javax.swing.JLabel();
+        ProfilePanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        fname = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        sname = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        goBack = new javax.swing.JButton();
+        adminMenu = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        btnEditComp = new javax.swing.JButton();
+        btnCreateAcc = new javax.swing.JButton();
+        btnDeleteAcc = new javax.swing.JButton();
+        btnAddComp = new javax.swing.JButton();
+        btnCreateBuild = new javax.swing.JButton();
+        btnViewBuild = new javax.swing.JButton();
+        btnAddMake = new javax.swing.JButton();
+        btnNewComponent = new javax.swing.JButton();
+        btnEditBuild = new javax.swing.JButton();
+        btnEditAcc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(559, 500));
+        setMinimumSize(new java.awt.Dimension(559, 500));
+        getContentPane().setLayout(null);
 
-        lableMenu.setText("MENU");
-
-        lable.setText("Previous Builds");
-
-        Build1.setText("Build");
-        Build1.addActionListener(new java.awt.event.ActionListener() {
+        profileBtn.setText("Profile");
+        profileBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Build1ActionPerformed(evt);
+                profileBtnActionPerformed(evt);
+            }
+        });
+
+        logOffBtn.setText("LogOff");
+        logOffBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOffBtnActionPerformed(evt);
             }
         });
 
@@ -58,84 +119,351 @@ public class user_menu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(196, Short.MAX_VALUE)
-                .addComponent(lableMenu)
-                .addGap(227, 227, 227))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(lable)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(191, 191, 191)
-                    .addComponent(Build1)
-                    .addContainerGap(194, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addComponent(profileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logOffBtn)
+                .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lableMenu)
-                .addGap(53, 53, 53)
-                .addComponent(lable)
-                .addGap(0, 157, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(38, 38, 38)
-                    .addComponent(Build1)
-                    .addContainerGap(175, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(profileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logOffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        logOffButton.setText("Log OFF");
-        logOffButton.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 559, 51);
+
+        MenuPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MenuPanel.setMaximumSize(new java.awt.Dimension(500, 500));
+        MenuPanel.setMinimumSize(new java.awt.Dimension(500, 500));
+        MenuPanel.setPreferredSize(new java.awt.Dimension(500, 500));
+        MenuPanel.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        jLabel1.setText("MENU");
+        MenuPanel.add(jLabel1);
+        jLabel1.setBounds(130, 50, 145, 60);
+
+        jLabel3.setText("Previous builds ");
+        MenuPanel.add(jLabel3);
+        jLabel3.setBounds(180, 170, 110, 16);
+
+        builds.setText("jLabel8");
+        MenuPanel.add(builds);
+        builds.setBounds(90, 200, 300, 16);
+
+        getContentPane().add(MenuPanel);
+        MenuPanel.setBounds(29, 59, 500, 435);
+
+        ProfilePanel.setBackground(new java.awt.Color(255, 255, 204));
+        ProfilePanel.setMaximumSize(new java.awt.Dimension(500, 500));
+        ProfilePanel.setMinimumSize(new java.awt.Dimension(500, 500));
+        ProfilePanel.setPreferredSize(new java.awt.Dimension(500, 500));
+        ProfilePanel.setRequestFocusEnabled(false);
+        ProfilePanel.setLayout(null);
+
+        jLabel2.setText("Fname");
+        ProfilePanel.add(jLabel2);
+        jLabel2.setBounds(67, 114, 41, 16);
+
+        fname.setText("Fname");
+        ProfilePanel.add(fname);
+        fname.setBounds(114, 114, 140, 16);
+
+        jLabel4.setText("Sname");
+        ProfilePanel.add(jLabel4);
+        jLabel4.setBounds(70, 140, 41, 16);
+
+        sname.setText("Sname");
+        ProfilePanel.add(sname);
+        sname.setBounds(120, 140, 160, 16);
+
+        jLabel6.setText("email");
+        ProfilePanel.add(jLabel6);
+        jLabel6.setBounds(60, 170, 34, 16);
+
+        email.setText("email");
+        ProfilePanel.add(email);
+        email.setBounds(120, 170, 230, 16);
+
+        jLabel5.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        jLabel5.setText("Profile");
+        ProfilePanel.add(jLabel5);
+        jLabel5.setBounds(180, 20, 220, 60);
+
+        goBack.setText("Go Back");
+        goBack.setToolTipText("");
+        goBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logOffButtonActionPerformed(evt);
+                goBackActionPerformed(evt);
             }
         });
+        ProfilePanel.add(goBack);
+        goBack.setBounds(30, 450, 94, 29);
 
-        SettingButton.setText("Settings ");
+        getContentPane().add(ProfilePanel);
+        ProfilePanel.setBounds(30, 54, 500, 440);
+        ProfilePanel.setVisible(false);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(SettingButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logOffButton))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logOffButton)
-                    .addComponent(SettingButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        adminMenu.setBackground(new java.awt.Color(255, 255, 204));
+        adminMenu.setLayout(null);
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        jLabel7.setText("Admin");
+        adminMenu.add(jLabel7);
+        jLabel7.setBounds(160, 20, 170, 60);
+
+        btnEditComp.setText("Edit Component");
+        btnEditComp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditCompActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnEditComp);
+        btnEditComp.setBounds(10, 260, 145, 29);
+
+        btnCreateAcc.setText("Create Account");
+        btnCreateAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateAccActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnCreateAcc);
+        btnCreateAcc.setBounds(10, 230, 140, 29);
+
+        btnDeleteAcc.setText("View Accounts");
+        btnDeleteAcc.setMaximumSize(new java.awt.Dimension(107, 23));
+        btnDeleteAcc.setMinimumSize(new java.awt.Dimension(107, 23));
+        btnDeleteAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteAccActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnDeleteAcc);
+        btnDeleteAcc.setBounds(10, 170, 136, 29);
+
+        btnAddComp.setText("View Components");
+        btnAddComp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCompActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnAddComp);
+        btnAddComp.setBounds(10, 290, 157, 29);
+
+        btnCreateBuild.setText("Create Build");
+        btnCreateBuild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateBuildActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnCreateBuild);
+        btnCreateBuild.setBounds(20, 320, 119, 29);
+
+        btnViewBuild.setText("View Builds");
+        btnViewBuild.setMaximumSize(new java.awt.Dimension(107, 23));
+        btnViewBuild.setMinimumSize(new java.awt.Dimension(107, 23));
+        btnViewBuild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewBuildActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnViewBuild);
+        btnViewBuild.setBounds(180, 170, 115, 29);
+
+        btnAddMake.setText("Add New Make");
+        btnAddMake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddMakeActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnAddMake);
+        btnAddMake.setBounds(180, 210, 137, 29);
+
+        btnNewComponent.setText("New Component");
+        btnNewComponent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewComponentActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnNewComponent);
+        btnNewComponent.setBounds(180, 250, 148, 29);
+
+        btnEditBuild.setText("Edit Build");
+        btnEditBuild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditBuildActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnEditBuild);
+        btnEditBuild.setBounds(220, 290, 103, 29);
+
+        btnEditAcc.setText("Edit Account");
+        btnEditAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditAccActionPerformed(evt);
+            }
+        });
+        adminMenu.add(btnEditAcc);
+        btnEditAcc.setBounds(220, 320, 124, 29);
+
+        getContentPane().add(adminMenu);
+        adminMenu.setBounds(6, 61, 547, 439);
+        adminMenu.setVisible(false);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void logOffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOffButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logOffButtonActionPerformed
+   
+    
+    
+    private void profileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileBtnActionPerformed
+        viewProfile();
+        //System.out.println(currentUser.getFname());
+        //fname.setText("fuck");
+    }//GEN-LAST:event_profileBtnActionPerformed
 
-    private void Build1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Build1ActionPerformed
+    private void logOffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOffBtnActionPerformed
+     
+        LogIn frm = new LogIn(); //opens admin user form
+        this.setVisible(false);
+        frm.setVisible(true);
+        
+        currentUser.reset();
+        
+        
+    }//GEN-LAST:event_logOffBtnActionPerformed
+
+    private void btnEditCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCompActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Build1ActionPerformed
+    }//GEN-LAST:event_btnEditCompActionPerformed
+
+    private void btnCreateAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccActionPerformed
+        this.setVisible(false);
+        new CreateAccountAdmin().setVisible(true);
+    }//GEN-LAST:event_btnCreateAccActionPerformed
+
+    private void btnDeleteAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccActionPerformed
+        this.setVisible(false);
+        //new DeleteAccount().setVisible(true);
+    }//GEN-LAST:event_btnDeleteAccActionPerformed
+
+    private void btnAddCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCompActionPerformed
+        this.setVisible(false);
+        //new AddComponent().setVisible(true);
+    }//GEN-LAST:event_btnAddCompActionPerformed
+
+    private void btnCreateBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBuildActionPerformed
+        this.setVisible(false);
+        new CreateBuild().setVisible(true);
+    }//GEN-LAST:event_btnCreateBuildActionPerformed
+
+    private void btnViewBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBuildActionPerformed
+        this.setVisible(false);
+        new CreateBuild().setVisible(true);
+    }//GEN-LAST:event_btnViewBuildActionPerformed
+
+    private void btnAddMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMakeActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new AddMake().setVisible(true);
+    }//GEN-LAST:event_btnAddMakeActionPerformed
+
+    private void btnNewComponentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewComponentActionPerformed
+        // TODO add your handling code here:
+        String[] choices = {"Accessory", "CPU", "Cooler", "GPU", "Make", "Motherboard", "Case", "PSU", "RAM", "Storage"};
+        String input = (String) JOptionPane.showInputDialog(null, "Which type of part is being added?",
+            "New Part", JOptionPane.QUESTION_MESSAGE, null, // Use
+            // default
+            // icon
+            choices, // Array of choices
+            choices[0]); // Initial choice
+        switch (input) {
+
+            case "Accessory":
+            break;
+
+            case "CPU":
+            this.setVisible(false);
+            new AddCPU(currentUser).setVisible(true);
+            break;
+
+            case "Motherboard":
+            this.setVisible(false);
+            new AddMotherboard(currentUser).setVisible(true);
+            break;
+
+            case "RAM":
+            this.setVisible(false);
+            new addRAM(currentUser).setVisible(true);
+            break;
+
+        }
+    }//GEN-LAST:event_btnNewComponentActionPerformed
+
+    private void btnEditBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditBuildActionPerformed
+        String[] choices = {"Build 1", "Build 2", "Build 3"};
+        //Need build names here to be pulled from DB
+        String input = (String) JOptionPane.showInputDialog(null, "Which build would you like to edit?",
+            "Edit Build", JOptionPane.QUESTION_MESSAGE, null, // Use
+            // default
+            // icon
+            choices, // Array of choices
+            choices[0]); // Initial choice
+        switch (input) {
+
+            case "Build 1":
+            this.setVisible(false);
+            new EditBuild(currentUser, input).setVisible(true);
+            break;
+
+            case "Build 2":
+            this.setVisible(false);
+            new EditBuild(currentUser, input).setVisible(true);
+            break;
+
+            case "Build 3":
+            this.setVisible(false);
+            new EditBuild(currentUser, input).setVisible(true);
+            break;
+        }
+    }//GEN-LAST:event_btnEditBuildActionPerformed
+
+    private void btnEditAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAccActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditAccActionPerformed
+
+    private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
+        if(currentUser.getType() == true){
+            MenuPanel.setVisible(false);
+        adminMenu.setVisible(true);
+        ProfilePanel.setVisible(false);
+
+        }else{
+            MenuPanel.setVisible(true);
+        adminMenu.setVisible(false);
+        ProfilePanel.setVisible(false);
+
+        }
+        
+        
+        
+    }//GEN-LAST:event_goBackActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
+       
+ 
+
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -163,16 +491,39 @@ public class user_menu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new user_menu().setVisible(true);
+               
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Build1;
-    private javax.swing.JButton SettingButton;
+    private javax.swing.JPanel MenuPanel;
+    private javax.swing.JPanel ProfilePanel;
+    private javax.swing.JPanel adminMenu;
+    private javax.swing.JButton btnAddComp;
+    private javax.swing.JButton btnAddMake;
+    private javax.swing.JButton btnCreateAcc;
+    private javax.swing.JButton btnCreateBuild;
+    private javax.swing.JButton btnDeleteAcc;
+    private javax.swing.JButton btnEditAcc;
+    private javax.swing.JButton btnEditBuild;
+    private javax.swing.JButton btnEditComp;
+    private javax.swing.JButton btnNewComponent;
+    private javax.swing.JButton btnViewBuild;
+    private javax.swing.JLabel builds;
+    private javax.swing.JLabel email;
+    private javax.swing.JLabel fname;
+    private javax.swing.JButton goBack;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lable;
-    private javax.swing.JLabel lableMenu;
-    private javax.swing.JButton logOffButton;
+    private javax.swing.JButton logOffBtn;
+    private javax.swing.JButton profileBtn;
+    private javax.swing.JLabel sname;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,14 +25,34 @@ public class UserAccount {
     private String email;
     private boolean type;          //True for admin, false for general. 
 
+    private String loggedFname;
+    private String loggedSname;
+    private String loggedEmail;
+
+
+
     /**
      *
      * @return
      */
+    
+    public String getFname(){
+        return loggedFname;
+    }
+    public String getSname(){
+        return loggedSname;
+    }
+    public String getEmail(){
+        return loggedEmail;
+    }
     public String getUsername() {
 
         return username;
     }
+    
+   
+    
+    
     
     /**
      *
@@ -46,7 +67,7 @@ public class UserAccount {
         
         try {
             Statement stmt = (Statement) con.createStatement();
-            String query = ("SELECT ID, Password, accountType FROM Account WHERE ID='" + enteredUname+"'");
+            String query = ("SELECT ID, Password, accountType, Fname, Sname, Email FROM Account WHERE ID='" + enteredUname+"'");
 
             stmt.executeQuery(query);
             ResultSet rs = stmt.getResultSet();
@@ -55,6 +76,13 @@ public class UserAccount {
 
                 dbUname = rs.getString("ID");
                 dbPassword = rs.getString("Password");
+                
+                loggedFname = rs.getString("Fname");
+                loggedSname = rs.getString("Sname");
+                loggedEmail = rs.getString("Email");
+
+                 //System.out.println(loggedFname + loggedSname + loggedEmail);
+                 
                 boolean dbType = rs.getBoolean("accountType");
                 if (dbUname.equals(enteredUname) && dbPassword.equals(enteredPass)) { //Comparison check
                     setType(dbType); //Sets type of user.
@@ -71,7 +99,7 @@ public class UserAccount {
         }
 
         return false;
-
+        
     }
 
     /**
@@ -82,6 +110,40 @@ public class UserAccount {
      * @param password
      * @return
      */
+    
+    public String getBuilds(){
+        
+           Connection con = DatabaseConnection.establishConnection();
+           String user = username;
+
+           try {
+            Statement stmt = (Statement) con.createStatement();
+            String query = ("SELECT name FROM Build WHERE Account='" + user+"'");
+
+            stmt.executeQuery(query);
+            ResultSet rs = stmt.getResultSet();
+
+            while (rs.next()) {
+                if(rs.getString("name")==" "){
+                  System.out.println("EMPTY");
+
+                }else{
+                
+                  System.out.println(rs.getString("name")+"    "+user);
+                  return rs.getString("name");
+                }
+            
+
+            }
+           }
+
+        catch (SQLException err) {
+            System.out.println(err.getMessage());   //Prints out SQL error 
+        }
+           return "-1";
+    }
+    
+    
     public boolean checkPassword(String username, String password){
             // this statement establishes the connection between netbeans and the vm
            Connection con = DatabaseConnection.establishConnection();
@@ -281,6 +343,25 @@ public class UserAccount {
     
     }
     
+ 
+    
+    
+    
+    }
+    
+    
+     protected void reset(){
+        username = " ";
+   password= " ";
+    fName= " ";
+    sName= " ";
+     email= " ";
+     type= false;         //True for admin, false for general. 
+
+   loggedFname = " ";
+     loggedSname= " ";
+    loggedEmail= " ";
+
     }
     
     

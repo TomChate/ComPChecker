@@ -158,11 +158,11 @@ public class LogIn extends javax.swing.JFrame {
         boolean successful = user.LogInService(username, password); //asks for username and password
         if (successful) {
             boolean type = user.getType(); // if details are correct returns type of user
-            if (type) {
-                AdminMenu frm = new AdminMenu(user); //opens admin user form
+            if (type == true) {
+                user_menu frm = new user_menu(user,true); //opens admin user form
                 this.setVisible(false);
-
                 frm.setVisible(true);
+                
             } else {
                 user_menu frm = new user_menu(user); //opens general user form
                 this.setVisible(false);

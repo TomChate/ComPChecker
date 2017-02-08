@@ -198,12 +198,27 @@ public class SelectComponent extends javax.swing.JDialog {
     public String getDetails() {
         int column1 = 0;
         int column2 = 1;
+        int partID = 0;
         int row = jTable.getSelectedRow();
-        String value1 = jTable.getModel().getValueAt(row, column1).toString();
-        String value2 = jTable.getModel().getValueAt(row, column2).toString();
-        return value1+" "+value2;   //returns make and brand to be stored in button text
-    } 
-    
+        String make = jTable.getModel().getValueAt(row, column1).toString();
+        String model = jTable.getModel().getValueAt(row, column2).toString();
+        Connection con = DatabaseConnection.establishConnection();
+
+        try {
+            Statement stmt = (Statement) con.createStatement();
+            String query = "SELECT PartID FROM Part WHERE Model ='" + model + "' && Make = '" + make + "'";
+            stmt.executeQuery(query);
+            ResultSet rs = stmt.getResultSet();
+            while (rs.next()) {
+                partID = rs.getInt("PartID");
+            }
+            System.out.println(partID);   //Prints out SQL error 
+        } catch (SQLException err) {
+            System.out.println(err.getMessage());   //Prints out SQL error 
+        }
+        return make + " " + model;   //returns make and brand to be stored in button text
+    }
+
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTableMouseClicked
@@ -211,6 +226,8 @@ public class SelectComponent extends javax.swing.JDialog {
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         //temp save part, change button label to part text
         System.out.println(getDetails());
+        this.setVisible(false);
+
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

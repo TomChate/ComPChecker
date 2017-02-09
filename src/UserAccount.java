@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.*;
 
 
 /*
@@ -110,37 +111,38 @@ public class UserAccount {
      * @param password
      * @return
      */
-    
-    public String getBuilds(){
+    ArrayList<String> builds = new ArrayList<String>();
+
+    public ArrayList<String> getBuilds(){
         
            Connection con = DatabaseConnection.establishConnection();
            String user = username;
-
-           try {
+            
+      //ArrayList<String> builds = new ArrayList<String>();
+           
+            try {
             Statement stmt = (Statement) con.createStatement();
             String query = ("SELECT name FROM Build WHERE Account='" + user+"'");
 
             stmt.executeQuery(query);
             ResultSet rs = stmt.getResultSet();
-
-            while (rs.next()) {
-                if(rs.getString("name")==" "){
-                  System.out.println("EMPTY");
-
-                }else{
-                
-                  System.out.println(rs.getString("name")+"    "+user);
-                  return rs.getString("name");
-                }
             
-
+            while (rs.next()) {
+          
+                builds.add(rs.getString("name"));
+                
+            }
+            if(!rs.first()){
+                builds.add("No Builds");
+                return builds;
             }
            }
-
         catch (SQLException err) {
             System.out.println(err.getMessage());   //Prints out SQL error 
         }
-           return "-1";
+     //System.out.println(builds);
+
+           return builds;
     }
     
     

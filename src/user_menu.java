@@ -59,14 +59,14 @@ public class user_menu extends javax.swing.JFrame {
     
     
     private void getBuilds(){
-        
+        buildsList.removeAll();
     ArrayList builds = new ArrayList();
          builds = currentUser.getBuilds();
     
     System.out.println(builds);
     
     DefaultListModel model = new DefaultListModel();
-    
+    //model.clear();
     for (Object str : builds) { 		      
           // System.out.println(str); 	
           model.addElement(str);
@@ -498,8 +498,8 @@ public class user_menu extends javax.swing.JFrame {
         String selectedBuild = buildsList.getSelectedValue();
         String username = currentUser.getUsername();
         
-        view_build frm = new view_build(username,selectedBuild); //
-        this.setVisible(false);
+        view_build frm = new view_build(currentUser,selectedBuild); //
+        this.dispose();
         frm.setVisible(true);
     }//GEN-LAST:event_buildsListMouseClicked
 

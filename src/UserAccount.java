@@ -114,7 +114,7 @@ public class UserAccount {
     ArrayList<String> builds = new ArrayList<String>();
 
     public ArrayList<String> getBuilds(){
-        
+        builds.clear();
            Connection con = DatabaseConnection.establishConnection();
            String user = username;
             

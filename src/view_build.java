@@ -358,6 +358,7 @@ jTableBuild.addMouseListener(new MouseAdapter() {
 
     private void btn_editBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editBuildActionPerformed
         jTableBuild.enable();
+        //height light all rows 
 
     }//GEN-LAST:event_btn_editBuildActionPerformed
 

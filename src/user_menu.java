@@ -475,12 +475,12 @@ public class user_menu extends javax.swing.JFrame {
 
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         if(currentUser.getType() == true){
-           // MenuPanel.setVisible(false);
+         MenuPanel.setVisible(true);
         adminMenu.setVisible(true);
         ProfilePanel.setVisible(false);
 
         }else{
-            //MenuPanel.setVisible(true);
+         MenuPanel.setVisible(true);
         adminMenu.setVisible(false);
         ProfilePanel.setVisible(false);
 

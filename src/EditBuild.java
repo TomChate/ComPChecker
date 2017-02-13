@@ -54,6 +54,9 @@ public class EditBuild extends javax.swing.JFrame {
         btnAccessories = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 700));
+        setMinimumSize(new java.awt.Dimension(900, 700));
+        setPreferredSize(new java.awt.Dimension(900, 700));
 
         btnCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnCancel.setText("✘");

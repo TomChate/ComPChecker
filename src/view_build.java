@@ -256,8 +256,9 @@ jTableBuild.addMouseListener(new MouseAdapter() {
         jTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(707, 428));
-        setSize(new java.awt.Dimension(707, 428));
+        setMaximumSize(new java.awt.Dimension(900, 700));
+        setMinimumSize(new java.awt.Dimension(900, 700));
+        setSize(new java.awt.Dimension(900, 700));
         getContentPane().setLayout(null);
 
         buildPanel.setLayout(null);
@@ -297,7 +298,7 @@ jTableBuild.addMouseListener(new MouseAdapter() {
         }
     });
     buildPanel.add(goBack);
-    goBack.setBounds(10, 300, 94, 29);
+    goBack.setBounds(10, 300, 71, 23);
 
     btn_editBuild.setText("Edit");
     btn_editBuild.addActionListener(new java.awt.event.ActionListener() {
@@ -306,10 +307,14 @@ jTableBuild.addMouseListener(new MouseAdapter() {
         }
     });
     buildPanel.add(btn_editBuild);
-    btn_editBuild.setBounds(290, 270, 75, 29);
+    btn_editBuild.setBounds(290, 270, 51, 23);
 
     getContentPane().add(buildPanel);
     buildPanel.setBounds(0, 40, 660, 380);
+
+    selectPartPanel.setMaximumSize(new java.awt.Dimension(900, 700));
+    selectPartPanel.setMinimumSize(new java.awt.Dimension(900, 700));
+    selectPartPanel.setPreferredSize(new java.awt.Dimension(900, 700));
 
     jTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {

@@ -117,8 +117,9 @@ public class user_menu extends javax.swing.JFrame {
         goBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(559, 500));
-        setMinimumSize(new java.awt.Dimension(559, 500));
+        setMaximumSize(new java.awt.Dimension(900, 700));
+        setMinimumSize(new java.awt.Dimension(900, 700));
+        setPreferredSize(new java.awt.Dimension(900, 700));
         getContentPane().setLayout(null);
 
         profileBtn.setText("Profile");
@@ -157,7 +158,7 @@ public class user_menu extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 559, 51);
+        jPanel1.setBounds(0, 0, 537, 61);
 
         adminMenu.setBackground(new java.awt.Color(255, 255, 204));
         adminMenu.setMaximumSize(new java.awt.Dimension(547, 165));
@@ -177,7 +178,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnEditComp);
-        btnEditComp.setBounds(190, 100, 145, 29);
+        btnEditComp.setBounds(190, 100, 109, 23);
 
         btnCreateAcc.setText("Create Account");
         btnCreateAcc.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +187,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnCreateAcc);
-        btnCreateAcc.setBounds(30, 70, 140, 29);
+        btnCreateAcc.setBounds(30, 70, 107, 23);
 
         btnDeleteAcc.setText("View Accounts");
         btnDeleteAcc.setMaximumSize(new java.awt.Dimension(107, 23));
@@ -197,7 +198,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnDeleteAcc);
-        btnDeleteAcc.setBounds(170, 70, 136, 29);
+        btnDeleteAcc.setBounds(170, 70, 101, 23);
 
         btnAddComp.setText("View Components");
         btnAddComp.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +207,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnAddComp);
-        btnAddComp.setBounds(30, 100, 157, 29);
+        btnAddComp.setBounds(30, 100, 117, 23);
 
         btnCreateBuild.setText("Create Build");
         btnCreateBuild.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +216,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnCreateBuild);
-        btnCreateBuild.setBounds(40, 130, 119, 29);
+        btnCreateBuild.setBounds(40, 130, 91, 23);
 
         btnViewBuild.setText("View Builds");
         btnViewBuild.setMaximumSize(new java.awt.Dimension(107, 23));
@@ -226,7 +227,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnViewBuild);
-        btnViewBuild.setBounds(310, 70, 115, 29);
+        btnViewBuild.setBounds(310, 70, 85, 23);
 
         btnAddMake.setText("Add New Make");
         btnAddMake.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +236,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnAddMake);
-        btnAddMake.setBounds(380, 130, 137, 29);
+        btnAddMake.setBounds(380, 130, 103, 23);
 
         btnNewComponent.setText("New Component");
         btnNewComponent.addActionListener(new java.awt.event.ActionListener() {
@@ -244,7 +245,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnNewComponent);
-        btnNewComponent.setBounds(330, 100, 148, 29);
+        btnNewComponent.setBounds(330, 100, 111, 23);
 
         btnEditBuild.setText("Edit Build");
         btnEditBuild.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +254,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnEditBuild);
-        btnEditBuild.setBounds(280, 130, 103, 29);
+        btnEditBuild.setBounds(280, 130, 75, 23);
 
         btnEditAcc.setText("Edit Account");
         btnEditAcc.addActionListener(new java.awt.event.ActionListener() {
@@ -262,7 +263,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         adminMenu.add(btnEditAcc);
-        btnEditAcc.setBounds(160, 130, 124, 29);
+        btnEditAcc.setBounds(160, 130, 93, 23);
 
         getContentPane().add(adminMenu);
         adminMenu.setBounds(10, 310, 547, 180);
@@ -277,11 +278,11 @@ public class user_menu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         jLabel1.setText("MENU");
         MenuPanel.add(jLabel1);
-        jLabel1.setBounds(190, 20, 145, 60);
+        jLabel1.setBounds(190, 20, 128, 60);
 
         jLabel3.setText("View/Edit builds ");
         MenuPanel.add(jLabel3);
-        jLabel3.setBounds(200, 90, 110, 16);
+        jLabel3.setBounds(200, 90, 110, 14);
 
         buildsList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -310,27 +311,27 @@ public class user_menu extends javax.swing.JFrame {
 
         jLabel2.setText("Fname");
         ProfilePanel.add(jLabel2);
-        jLabel2.setBounds(67, 114, 41, 16);
+        jLabel2.setBounds(67, 114, 32, 14);
 
         fname.setText("Fname");
         ProfilePanel.add(fname);
-        fname.setBounds(114, 114, 140, 16);
+        fname.setBounds(114, 114, 140, 14);
 
         jLabel4.setText("Sname");
         ProfilePanel.add(jLabel4);
-        jLabel4.setBounds(70, 140, 41, 16);
+        jLabel4.setBounds(70, 140, 32, 14);
 
         sname.setText("Sname");
         ProfilePanel.add(sname);
-        sname.setBounds(120, 140, 160, 16);
+        sname.setBounds(120, 140, 160, 14);
 
         jLabel6.setText("email");
         ProfilePanel.add(jLabel6);
-        jLabel6.setBounds(60, 170, 34, 16);
+        jLabel6.setBounds(60, 170, 24, 14);
 
         email.setText("email");
         ProfilePanel.add(email);
-        email.setBounds(120, 170, 230, 16);
+        email.setBounds(120, 170, 230, 14);
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         jLabel5.setText("Profile");
@@ -345,7 +346,7 @@ public class user_menu extends javax.swing.JFrame {
             }
         });
         ProfilePanel.add(goBack);
-        goBack.setBounds(10, 360, 94, 29);
+        goBack.setBounds(10, 360, 71, 23);
 
         getContentPane().add(ProfilePanel);
         ProfilePanel.setBounds(30, 54, 500, 440);

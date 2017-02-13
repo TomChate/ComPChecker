@@ -68,8 +68,11 @@ public class AddCPU extends javax.swing.JDialog {
         btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 700));
+        setMinimumSize(new java.awt.Dimension(900, 700));
         setPreferredSize(new java.awt.Dimension(900, 700));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         cmboxMake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmboxMake.addActionListener(new java.awt.event.ActionListener() {
@@ -77,12 +80,24 @@ public class AddCPU extends javax.swing.JDialog {
                 cmboxMakeActionPerformed(evt);
             }
         });
+        getContentPane().add(cmboxMake);
+        cmboxMake.setBounds(130, 80, 140, 20);
 
         jLabel1.setText("Make:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(80, 80, 29, 14);
 
         jLabel2.setText("Speed:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(80, 170, 34, 14);
 
         jLabel3.setText("Cores:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(80, 200, 32, 14);
+        getContentPane().add(txtboxCores);
+        txtboxCores.setBounds(130, 200, 140, 20);
+        getContentPane().add(txtboxSpeed);
+        txtboxSpeed.setBounds(130, 170, 140, 20);
 
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -90,13 +105,25 @@ public class AddCPU extends javax.swing.JDialog {
                 btnSaveActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSave);
+        btnSave.setBounds(130, 230, 140, 23);
+        getContentPane().add(txtboxModel);
+        txtboxModel.setBounds(130, 110, 140, 20);
 
         jLabel5.setText("Model:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(80, 110, 32, 14);
 
         jLabel6.setText("Price:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(80, 140, 27, 14);
+        getContentPane().add(txtboxPrice);
+        txtboxPrice.setBounds(130, 140, 140, 20);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Add CPU");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(134, 37, 140, 14);
 
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -104,62 +131,8 @@ public class AddCPU extends javax.swing.JDialog {
                 btnCancelActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmboxMake, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtboxModel)
-                    .addComponent(txtboxPrice)
-                    .addComponent(txtboxCores)
-                    .addComponent(txtboxSpeed, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
-                .addContainerGap(110, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel4)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmboxMake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtboxModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtboxPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtboxSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtboxCores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSave)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCancel)
-                .addGap(22, 22, 22))
-        );
+        getContentPane().add(btnCancel);
+        btnCancel.setBounds(130, 260, 140, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

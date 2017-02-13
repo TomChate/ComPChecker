@@ -46,7 +46,7 @@ public class view_build extends javax.swing.JFrame {
         
         lb_buildName.setText(buildName);
         
-        TableColumn col = new TableColumn();
+        TableColumn colBuild = new TableColumn();
         ArrayList<String> columns = new ArrayList<>();
         columns.add("PC");
         columns.add("Parts");
@@ -60,8 +60,8 @@ public class view_build extends javax.swing.JFrame {
         
         TableColumn col1 = new TableColumn(model.getColumnCount());
         for (String temp : columns) { //Adds columns to table.
-            col.setHeaderValue(temp);
-            jTableBuild.addColumn(col);
+            colBuild.setHeaderValue(temp);
+            jTableBuild.addColumn(colBuild);
             model.addColumn(temp);
         }
         
@@ -132,35 +132,39 @@ jTableBuild.addMouseListener(new MouseAdapter() {
      *
      * @param type
      */
-    public void SelectComponent(String type) {
-
+    public void SelectComponent(String partType) {
+        System.out.println(partType);
+            
        
-
+        buildPanel.setVisible(false);
+        //jTable.setVisible(true);
         
-        initComponents();
+      //  initComponents();
         //this.setTitle("Select Component");     //Adds a title to the frame
-        setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+        //setLocationRelativeTo(null);    //Centers the frame in the middle of ths screen
+        
         TableColumn col = new TableColumn();
         ArrayList<String> columns = new ArrayList<>();
         columns.add("Make");
         columns.add("Model");
         columns.add("Price");
-        if (type == "CPU") {
+        if (partType.equals("CPU")) {
+            System.out.println(partType + true);
             columns.add("Speed");
             columns.add("Cores");
             columns.add("Graphics");
-        } else if (type == "Motherboard") {
+        } else if (partType.equals("Motherboard")) {
             columns.add("Socket");
             columns.add("Form Factor");
             columns.add("RAM Slots");
             columns.add("Max RAM");
         }
 
-        DefaultTableModel model = (DefaultTableModel) jTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTableParts.getModel();
         TableColumn col1 = new TableColumn(model.getColumnCount());
         for (String temp : columns) { //Adds columns to table.
             col.setHeaderValue(temp);
-            jTable.addColumn(col);
+            jTableParts.addColumn(col);
             model.addColumn(temp);
         }
 
@@ -171,7 +175,7 @@ jTableBuild.addMouseListener(new MouseAdapter() {
             String make;
             String mdl;
             double price;
-            if (type == "CPU") {
+            if (partType.equals("CPU")) {
                 query = ("Select P.PartID, P.Make, P.Model, P.Price, Speed, Cores, Graphics FROM CPU JOIN Part AS P on CPU.ID=P.PartID");
 
                 stmt.executeQuery(query);
@@ -188,7 +192,7 @@ jTableBuild.addMouseListener(new MouseAdapter() {
                     model.addRow(new Object[]{make, mdl, price, speed, cores, graphics});
 
                 }
-            } else if (type == "Motherboard") {
+            } else if (partType.equals("Motherboard")) {
                 query = ("Select P.PartID, P.Make, P.Model, P.Price, Socket, Form_Factor, RAM_Slots,MAX_RAM FROM Motherboard JOIN Part AS P on Motherboard.ID=P.PartID");
 
                 stmt.executeQuery(query);
@@ -215,9 +219,9 @@ jTableBuild.addMouseListener(new MouseAdapter() {
         int column1 = 0;
         int column2 = 1;
         int partID = 0;
-        int row = jTable.getSelectedRow();
-        String make = jTable.getModel().getValueAt(row, column1).toString();
-        String model = jTable.getModel().getValueAt(row, column2).toString();
+        int row = jTableParts.getSelectedRow();
+        String make = jTableParts.getModel().getValueAt(row, column1).toString();
+        String model = jTableParts.getModel().getValueAt(row, column2).toString();
         Connection con = DatabaseConnection.establishConnection();
 
         try {
@@ -253,7 +257,7 @@ jTableBuild.addMouseListener(new MouseAdapter() {
         btn_editBuild = new javax.swing.JButton();
         selectPartPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable = new javax.swing.JTable();
+        jTableParts = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(900, 700));
@@ -312,11 +316,15 @@ jTableBuild.addMouseListener(new MouseAdapter() {
     getContentPane().add(buildPanel);
     buildPanel.setBounds(0, 40, 660, 380);
 
+<<<<<<< Updated upstream
     selectPartPanel.setMaximumSize(new java.awt.Dimension(900, 700));
     selectPartPanel.setMinimumSize(new java.awt.Dimension(900, 700));
     selectPartPanel.setPreferredSize(new java.awt.Dimension(900, 700));
 
     jTable.setModel(new javax.swing.table.DefaultTableModel(
+=======
+    jTableParts.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> Stashed changes
         new Object [][] {
 
         },
@@ -326,12 +334,12 @@ jTableBuild.addMouseListener(new MouseAdapter() {
     )
     {public boolean isCellEditable(int row, int column){return false;}}
     );
-    jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+    jTableParts.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
-            jTableMouseClicked(evt);
+            jTablePartsMouseClicked(evt);
         }
     });
-    jScrollPane3.setViewportView(jTable);
+    jScrollPane3.setViewportView(jTableParts);
 
     selectPartPanel.add(jScrollPane3);
 
@@ -367,9 +375,9 @@ jTableBuild.addMouseListener(new MouseAdapter() {
 
     }//GEN-LAST:event_btn_editBuildActionPerformed
 
-    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+    private void jTablePartsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePartsMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTableMouseClicked
+    }//GEN-LAST:event_jTablePartsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -412,8 +420,8 @@ jTableBuild.addMouseListener(new MouseAdapter() {
     private javax.swing.JButton goBack;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable;
     private javax.swing.JTable jTableBuild;
+    private javax.swing.JTable jTableParts;
     private javax.swing.JLabel lb_buildName;
     private javax.swing.JPanel selectPartPanel;
     // End of variables declaration//GEN-END:variables
